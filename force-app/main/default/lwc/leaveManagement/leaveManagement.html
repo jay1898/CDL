@@ -1,0 +1,157 @@
+<template>
+	<div class="overridemodalcss"></div>
+	<div class="slds-scrollable" style="height:20rem;" tabindex="0">
+		<lightning-card title="Leave Management">
+			<!-- <div class="slds-grid slds-wrap">
+			<template for:each={users} for:item="user" for:index="index">
+				<div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12 slds-p-horizontal_medium slds-p-vertical_x-small"
+					key={user.Id}>
+					<label class="slds-checkbox_toggle slds-grid Fieldslabel">
+              <input type="checkbox" name={user.Id} onchange={handleCheckboxChange} checked={user.On_Leave__c} /> 
+                            <span class="slds-checkbox_faux_container " aria-live="assertive"> <span class="slds-checkbox_faux"></span> </span> 
+                            <span class="slds-form-element__label slds-m-bottom_none slds-m-left_small">{user.Name}</span> </label>
+				</div>
+			</template>
+		</div> -->
+
+			<div class="slds-grid slds-wrap">
+				<div
+					class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 slds-p-horizontal_medium slds-p-vertical_x-small">
+					<table class="slds-table slds-table_cell-buffer slds-table_bordered tableFormat"
+						style="table-layout: fixed;">
+						<thead style="background-color: rgba(156, 140, 125, 0.1);">
+							<tr style="width: 839.51px; height: 36px;">
+								<th class="tableHeader" scope="col">User Name</th>
+								<th class="tableHeader" scope="col">Uses Email</th>
+								<th class="tableHeader" scope="col">Set Order Amount</th>
+								<th class="tableHeader" scope="col">Leave Status</th>
+							</tr>
+						</thead>
+						<tbody> <template for:each={users} for:item="user" for:index="index">
+								<tr key={user.Id}>
+									<td class="tableRecords">{user.Name}</td>
+									<td class="tableRecords">{user.Email}</td>
+									<td class="tableRecords">{user.Assign_Order_Above__c}</td>
+									<td class="tableRecords">
+										<label class="slds-checkbox_toggle slds-grid Fieldslabel">
+								<input type="checkbox" name={user.Id} onchange={handleCheckboxChange} checked={user.On_Leave__c} /> 
+											  <span class="slds-checkbox_faux_container " aria-live="assertive"> <span class="slds-checkbox_faux"></span> </span> 
+											  <span class="slds-form-element__label slds-m-bottom_none slds-m-left_small">{user.Name}</span> </label>
+									</td>
+								</tr>
+							</template>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div
+				class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 slds-p-horizontal_medium slds-p-vertical_x-small">
+				<div style="Margin-top:30px">
+					<div style="display:flex;align-items:center;">
+						<div class="available"></div>
+						<div>
+							Available
+						</div>
+					</div>
+					<div style="display:flex;align-items:center;">
+						<div class="onLeave"></div>
+						<div>
+							On Leave
+						</div>
+					</div>
+				</div>
+			</div>
+			<template if:true={assignOrder}>
+				<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+					aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+					<div class="slds-modal__container" style="max-width:100%">
+						<header class="slds-modal__header">
+							<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+							<lightning-icon icon-name="utility:close"
+								alternative-text="close"
+								variant="inverse"
+								size="small" ></lightning-icon> 
+							<span class="slds-assistive-text">Close</span>
+							</button>
+							<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Assign Orders to
+								Other User</h2>
+						</header>
+						<div class="slds-modal__content slds-p-around_medium">
+							<div class="slds-grid slds-wrap">
+								<template if:true={allOrders.length}>
+								<div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 slds-p-horizontal_medium slds-p-vertical_x-small">
+									<table class="slds-table slds-table_cell-buffer slds-table_bordered tableFormat"
+										style="table-layout: fixed;">
+										<thead style="background-color: rgba(156, 140, 125, 0.1);">
+											<tr style="width: 839.51px; height: 36px;">
+												<th class="tableHeader" scope="col">Customer Name</th>
+												<th class="tableHeader" scope="col">Order Name</th>
+												<th class="tableHeader" scope="col">Order Status</th>
+												<th class="tableHeader" scope="col">Order Amount</th>
+												<th class="tableHeader" scope="col">Deliver Status</th>
+												<th class="tableHeader" scope="col">FollwUp Stage</th>
+												<th class="tableHeader" scope="col">Pending Followup</th>
+												<th class="tableHeader" scope="col">Next FollowUp</th>
+												<!--<th class="tableHeader" scope="col">Create Date</th>-->
+											</tr>
+										</thead>
+											<tbody> 
+												<template for:each={allOrders} for:item="orders" for:index="index">
+													<tr key={orders.Id}>
+														<td class="tableRecords">{orders.Account__r.Name}</td>
+														<td class="tableRecords">{orders.Name}</td>
+														<td class="tableRecords">{orders.Status__c}</td>
+														<td class="tableRecords">₹{orders.Grand_Total__c}</td>
+														<td class="tableRecords">{orders.Order_Delivery_Status__c}</td>
+														<td class="tableRecords">{orders.FollowUp_Stage__c}</td>
+														<td class="tableRecords">
+															<lightning-formatted-date-time
+																value={orders.Pending_Followup_Time__c} year="numeric"
+																month="numeric" day="numeric" hour="2-digit"
+																minute="2-digit" time-zone-name="short">
+															</lightning-formatted-date-time>
+														</td>
+														<td class="tableRecords">
+															<lightning-formatted-date-time
+																value={orders.Next_FollowUp_Time__c} year="numeric"
+																month="numeric" day="numeric" hour="2-digit"
+																minute="2-digit" time-zone-name="short">
+															</lightning-formatted-date-time>
+														</td>
+													</tr>
+												</template>
+											</tbody>									
+									</table>
+									<div align="Right" style="margin-top:10px;">
+										<button onclick={updateOrderDetails}
+                            style="background: rgb(1, 74, 153);color: rgb(255, 255, 255);border: none;height: 40px;border-radius: 6px;font-size: 14px;text-align: center;width: 200px;">Assign To Available Users</button>
+									</div>
+								</div>
+								</template>
+								<template if:false={allOrders.length}>																					
+								<div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 slds-p-horizontal_medium slds-p-vertical_x-small">
+									<div align="center">
+												<span style="color:green;font-size: 20px">There is no Pending order...</span>
+											</div>
+								</div>
+								</template>
+							</div>
+							<template if:true={spinner2}>
+				<div class="slds-align--absolute-center">
+					<lightning-spinner variant="brand" size="small"></lightning-spinner>
+				</div>
+			</template>
+						</div>				
+					</div>
+				</section>
+				<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+			</template>
+			<template if:true={spinner}>
+				<div class="slds-align--absolute-center">
+					<lightning-spinner variant="brand" size="small"></lightning-spinner>
+				</div>
+			</template>
+
+		</lightning-card>
+	</div>
+</template>

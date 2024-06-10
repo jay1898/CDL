@@ -1,0 +1,34 @@
+.tableFormat{
+    border: solid 1px;
+    border-color: #DDDBDA;
+    margin-bottom: 20px;
+}
+
+.tableRecords{
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    
+}
+.tableHeader{
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    background-color: rgba(156, 140, 125, 0.1);
+}
+
+.slds-table .tableRecords {
+    white-space: normal; /* or break-word */
+    word-wrap: break-word;
+  }
+
+ .progresFont{
+    font-size: 16px;
+    /* font-family: Segoe UI; */
+ }

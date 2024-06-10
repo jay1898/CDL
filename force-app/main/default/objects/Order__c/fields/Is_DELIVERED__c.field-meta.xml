@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_DELIVERED__c</fullName>
+    <externalId>false</externalId>
+    <label>Is DELIVERED</label>
+    <summaryFilterItems>
+        <field>Delivery_Track__c.Final_Status__c</field>
+        <operation>equals</operation>
+        <value>DELIVERED</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Delivery_Track__c.Order__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<messaging:emailTemplate subject="Order Info" recipientType="User" relatedToType="Order__c">
+<messaging:htmlEmailBody >
+
+   
+        <p>Hello {!relatedTo.name}--</p>
+        <apex:datatable cellpadding="5" var="cx" value="{!relatedTo.Order_Line_Items__r}">
+            <apex:column value="{!cx.Id}" headerValue="Order Id"/>
+            <apex:column value="{!cx.Name}" headerValue="Order Name"/>
+        </apex:datatable>
+       
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

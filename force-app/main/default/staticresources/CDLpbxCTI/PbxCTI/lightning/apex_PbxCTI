@@ -1,0 +1,53 @@
+<apex:page showChat="false" sidebar="false" showHeader="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="false" applyBodyTag="false" contentType="text/html" controller="LeadRemoteController" tabStyle="Lead">
+    <apex:outputText escape="false" value="{!" <!DOCTYPE html>"}" />
+    <html class="no-js">
+
+    <head>
+      <meta charset="utf-8"></meta>
+      <base></base>
+      <apex:includeScript value="/support/console/32.0/integration.js" />
+      <apex:includeScript value="//code.jquery.com/jquery-1.11.3.min.js"/>
+      <script type="application/javascript">
+        if (typeof Visualforce !== 'undefined') {
+          if (Visualforce && Visualforce.remoting) {
+            Visualforce.remoting.timeout = 120000; // Set timeout at page level
+          }
+        }
+        var isLightning = window.location.href.indexOf('lightning') >= 0;
+        var element = document.getElementsByTagName('base')[0];
+        console.log('isLightning = ' + isLightning);
+        var attrValue;
+        if (isLightning) {
+          attrValue = "{!URLFOR($Resource.CDLCTIVF,'PbxCTI/lightning/')}";
+        } else {
+          attrValue = "{!URLFOR($Resource.CDLCTIVF,'classic/')}";
+        }
+        element.setAttribute('href', attrValue);
+
+        $(document).ready(function(){
+            var auth = localStorage.getItem('tfn-auth');
+            if(auth){
+                $("#main_body").load("main.html");
+            }
+            else{
+                $("#main_body").load("index.html");
+            }
+           
+        });
+        
+       window.addEventListener('storage', function(e) {  
+            var auth1 = localStorage.getItem('tfn-auth');
+            if(auth1){
+                    $("#main_body").load("main.html");
+            }
+            else{
+                $("#main_body").load("index.html");
+            }
+        });
+
+      </script>
+      <body><div id="main_body"></div>
+  </body>
+  </head>
+    </html>
+</apex:page>

@@ -1,0 +1,275 @@
+<template>
+	<div class="overridemodalcss"></div>
+	<lightning-card>
+        <template if:true={isVisibleOrderdetails}>
+        <div style="margin-bottom: 10px;position: sticky;top: -15px;background-color: rgb(0, 153, 255);color: yellow;padding: 5px;font-size: 20px;z-index: 10;">
+						{currentStage}
+						
+				</div>
+		<div class="slds-grid slds-wrap">
+            <template if:true={spinner}>
+				<div class="slds-align--absolute-center">
+					<lightning-spinner variant="brand" size="small"></lightning-spinner>
+				</div>
+			</template>         
+                <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                    <div align="left">
+                        <strong style="font-size: 20px;">Phone No: </strong>
+                        <label style="color:#2C7CAD; font-size:20px">
+                            
+														<lightning-click-to-dial value={phoneNumber}> {phoneNumber}</lightning-click-to-dial>
+                        </label>
+                    </div>              
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                    <div align="right">
+                        <lightning-button variant="brand-outline" label={orderName}
+                            title="Go to Order" onclick={redirectToOrder} class="slds-m-left_x-small">
+                        </lightning-button>
+                    </div>               
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12"
+                    style="padding-top: 22px; border-bottom: 1px solid;border-color: #DDDBDA;">
+                    <label class="Fieldslabel">Order Amount </label>
+                    <strong>₹{orderAmount}</strong>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12"
+                    style="padding-top: 22px; border-bottom: 1px solid;border-color: #DDDBDA;">
+                    <label class="Fieldslabel">Payment Status </label>
+                    <strong>{paymentStatus}</strong>
+                </div>
+
+                <!--Billing-->
+                <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                    <div
+                        class="slds-col slds-size_2-of-1 slds-medium-size_2-of-2 slds-large-size_2-of-2 slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Billing Street</label>
+                        <lightning-input max-length="255" class="slds-m-top_xx-small organizeNameValid"
+                            type="text" variant="label-hidden" name="Billing_Street__c"
+                            value={billingStreet} onchange={verifiedOrderSave}></lightning-input>
+                    </div>
+                    <div
+                        class="slds-col slds-size_2-of-1 slds-medium-size_2-of-2 slds-large-size_2-of-2 slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Billing City</label>
+                        <lightning-input max-length="255" class="slds-m-top_xx-small organizeNameValid"
+                            type="text" variant="label-hidden" name="Billing_City__c"
+                            value={billingCity} onchange={verifiedOrderSave}></lightning-input>
+                    </div>
+                    <div
+                        class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2 slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Billing Zip/Postal Code</label>
+                        <lightning-input max-length="255" class="slds-m-top_xx-small organizeNameValid"
+                            type="text" variant="label-hidden" name="Billing_PostalCode__c"
+                            value={billingZipCode} onchange={verifiedOrderSave}></lightning-input>
+                    </div>
+                    <div
+                        class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2 slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Billing State/Province</label>
+                        <lightning-input max-length="255" class="slds-m-top_xx-small organizeNameValid"
+                            type="text" variant="label-hidden" name="Billing_State__c"
+                            value={billingState} onchange={verifiedOrderSave}></lightning-input>
+                    </div>
+                    <div
+                        class="slds-col slds-size_2-of-1 slds-medium-size_2-of-2 slds-large-size_2-of-2 slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Billing Country</label>
+                        <lightning-input max-length="255" class="slds-m-top_xx-small organizeNameValid"
+                            type="text" variant="label-hidden" name="Billing_Country__c"
+                            value={billingCountry} onchange={verifiedOrderSave}></lightning-input>
+                    </div>
+                </div>
+                <!--Shipping-->
+                <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                    <div
+                        class="slds-col slds-size_2-of-1 slds-medium-size_2-of-2 slds-large-size_2-of-2 slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Shipping Street</label>
+                        <lightning-input max-length="255" class="slds-m-top_xx-small organizeNameValid"
+                            type="text" variant="label-hidden" name="Shipping_Street__c"
+                            value={shippingStreet} onchange={verifiedOrderSave}></lightning-input>
+                    </div>
+                    <div
+                        class="slds-col slds-size_2-of-1 slds-medium-size_2-of-2 slds-large-size_2-of-2 slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Shipping City</label>
+                        <lightning-input max-length="255" class="slds-m-top_xx-small organizeNameValid"
+                            type="text" variant="label-hidden" name="Shipping_City__c"
+                            value={shippingCity} onchange={verifiedOrderSave}></lightning-input>
+                    </div>
+                    <div
+                        class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2 slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Shipping Zip/Postal Code</label>
+                        <lightning-input max-length="255" class="slds-m-top_xx-small organizeNameValid"
+                            type="text" variant="label-hidden" name="Shipping_PostalCode__c"
+                            value={shippingZipCode} onchange={verifiedOrderSave}></lightning-input>
+                    </div>
+                    <div
+                        class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2 slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Shipping State/Province</label>
+                        <lightning-input max-length="255" class="slds-m-top_xx-small organizeNameValid"
+                            type="text" variant="label-hidden" name="Shipping_State__c"
+                            value={shippingState} onchange={verifiedOrderSave}></lightning-input>
+                    </div>
+                    <div
+                        class="slds-col slds-size_2-of-1 slds-medium-size_2-of-2 slds-large-size_2-of-2 slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Shipping Country</label>
+                        <lightning-input max-length="255" class="slds-m-top_xx-small organizeNameValid"
+                            type="text" variant="label-hidden" name="Shipping_Country__c"
+                            value={shippingCountry} onchange={verifiedOrderSave}></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12" style="padding: 0px 18px;">
+                <lightning-combobox label="Call Status" class="combobox" name="Call__c"
+					value={callStatus} placeholder={recordsPerPage} options={callStatusOption}
+					onchange={verifiedOrderSave}>
+				</lightning-combobox>
+            </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12">
+                    <div align="right">
+                        <button onclick={updateOrderDetails}
+                            style="background: rgb(1, 74, 153);color: rgb(255, 255, 255);border: none;height: 40px;border-radius: 6px;font-size: 14px;text-align: center;width: 112px;">Update Details</button>
+                            <template if:true={isVisibleVarifiedButton}>
+                            &nbsp;&nbsp;&nbsp;
+                            <button onclick={orderVerified}
+                            style="background: rgb(1, 74, 153);color: rgb(255, 255, 255);border: none;height: 40px;border-radius: 6px;font-size: 14px;text-align: center;width: 112px;">Verified</button>
+                        </template>
+                        <button onclick={orderVoided}
+                            style="background: rgb(255,0,0);color: rgb(255, 255, 255);border: none;height: 40px;border-radius: 6px;font-size: 14px;text-align: center;width: 112px;margin: 10PX;">Voided</button>  
+                    </div>
+                </div>
+                
+                <div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12">
+                    <h2 style="margin: 10px 0px;font-weight: bold;font-size:20px;">Order Items</h2>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered tableFormat"
+                        style="table-layout: fixed;margin-bottom:10px;">
+                        <thead style="background-color: rgba(156, 140, 125, 0.1);">
+                            <tr style="width: 839.51px; height: 36px;">
+                                <th class="tableHeader" scope="col" style="width: 15%;">Store Name</th>
+                                <th class="tableHeader" scope="col">Product Name</th>
+                                <th class="tableHeader" scope="col" style="width: 15%;">SKU</th>
+                                <th class="tableHeader" scope="col" style="width: 9%;">Quantity</th>
+                                <th class="tableHeader" scope="col" style="width: 9%;">Product Weight
+                                </th>
+                                <th class="tableHeader" scope="col" style="width: 9%;">Tax Price</th>
+
+                                <th class="tableHeader" scope="col" style="width: 9%;">Subtotal Price
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody> <template for:each={orderItems} for:item="ordersItems"
+                                for:index="index">
+                                <tr key={ordersItems.Id}>
+                                    <td class="tableRecords">{ordersItems.Vendor__c}</td>
+                                    <td class="tableRecords">{ordersItems.Product_Name__c}</td>
+                                    <td class="tableRecords">{ordersItems.SKU__c}</td>
+                                    <td class="tableRecords">{ordersItems.Quantity__c}</td>
+                                    <td class="tableRecords">{ordersItems.Weight_gm__c}</td>
+                                    <td class="tableRecords">{ordersItems.Tax_Price__c}</td>
+                                    <td class="tableRecords">₹{ordersItems.Subtotal_Price__c}</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            
+            <template if:true={isLastfollowupPending}>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12">
+                    <template if:true={followUpVisible}>
+                    <div class="slds-col slds-p-horizontal_medium slds-p-vertical_x-small">
+                        Follow up Step: <b>{latestfollowupItem.Follow_Up_Order__c}</b>
+                    </div>
+                    <div class="slds-col slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Expected Follow Up Time: 
+                            <b>
+                                <lightning-formatted-date-time
+                                    value={latestfollowupItem.Expected_Follow_Up_Time__c} year="numeric"
+                                    month="numeric" day="numeric" hour="2-digit" minute="2-digit"
+                                    time-zone-name="short"></lightning-formatted-date-time>
+                            </b>
+                        </label>
+                    </div>
+                </template>
+                    <div class="slds-col slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Next Follow Up Time 
+                            <b>
+                              <lightning-input type="datetime" name="input5" value={newFollouptime} onchange={handleInputTimeChange} ></lightning-input>
+                            </b>
+                            </label>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_7-of-12">
+                    <div class="slds-col slds-p-horizontal_medium slds-p-vertical_x-small">
+                        <label class="Fieldslabel">Comment<span aria-hidden="true"
+                                class="required">*</span></label>
+                        <lightning-textarea required="true" max-length="255"
+                            class="slds-m-top_xx-small organizeNameValid" type="text"
+                            variant="label-hidden" name="txtcomment" onchange={handleInputChange}
+                            value={followUpComment} message-when-value-missing="Please update comments here"></lightning-textarea>
+                           <div align="right" style="margin-top: 5px;">
+                            <button onclick={UpdateFollowUpDetails}
+                            class="slds-button slds-button_brand">Save</button></div>
+                        </div>
+                </div>
+            </template>
+            <br />
+            <template if:true={followUpVisible}>
+            
+            <div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12">
+                <h2 style="margin: 10px 0px;font-weight: bold;font-size:20px;">Follow Up Orders</h2>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered tableFormat"
+                    style="table-layout: fixed;">
+                    <thead style="background-color: rgba(156, 140, 125, 0.1);">
+                        <tr style="width: 839.51px; height: 36px;">
+                            <th class="tableHeader" scope="col" style="width: 30%;">Follow Up Stage </th>
+                            <th class="tableHeader" scope="col" style="width: 20%;">Follow Up Number
+                            </th>
+                            <th class="tableHeader" scope="col" style="width: 30%;">Expected Time</th>
+                            <th class="tableHeader" scope="col" style="width: 30%;">Actual Time</th>
+                            <th class="tableHeader" scope="col" style="width: 50%;">Comment</th>
+                            <th class="tableHeader" scope="col" style="width: 30%;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>    
+                        <template for:each={followupItems} for:item="followupItem"
+                            for:index="index">
+                            <tr key={followupItem.Id}>
+                                <td class="tableRecords">{followupItem.FollowUp_Stage__c}</td>
+                                <td class="tableRecords">{followupItem.Follow_Up_Order__c} follow up
+                                </td>
+                                <td class="tableRecords">
+                                    <lightning-formatted-date-time
+                                        value={followupItem.Expected_Follow_Up_Time__c} year="numeric"
+                                        month="numeric" day="numeric" hour="2-digit" minute="2-digit"
+                                        time-zone-name="short">
+                                    </lightning-formatted-date-time>
+                                </td>
+                                <td class="tableRecords">
+                                    <lightning-formatted-date-time
+                                        value={followupItem.Actual_Follow_Up_Time__c} year="numeric"
+                                        month="numeric" day="numeric" hour="2-digit" minute="2-digit"
+                                        time-zone-name="short">
+                                    </lightning-formatted-date-time>
+                                </td>
+                                <td class="tableRecords">{followupItem.Comment__c}</td>
+                                <td class="tableRecords">{followupItem.Status__c}</td>
+                            </tr>
+                        </template>    
+                    </tbody>
+                </table>
+            </div>
+            </template>
+            <br />
+            <div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12" style="padding-top: 22px;">
+                                        
+            <c-order-questions></c-order-questions>                            
+            </div>
+        </div>
+    </template>
+    <template if:false={isVisibleOrderdetails}>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12">
+                <div align="center">
+                    <span style="color:green;font-size: 40px">FollowUps are done for all the Leads...</span>
+                </div>
+            </div>
+        </div>
+    </template>
+	</lightning-card>
+</template>

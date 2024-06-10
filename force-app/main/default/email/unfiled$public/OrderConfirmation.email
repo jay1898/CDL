@@ -1,0 +1,13 @@
+Hello {!Order__c.Name}
+
+Thank you for placing order #2987 with us.
+
+Order details: Modern Design 925 Silver Necklace - Yellow
+Amount: ₹1,999.00
+
+We have started processing your Order!
+
+Tracking details will be shared soon.
+
+Thanks,
+Fiery Flair

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FaceBook</fullName>
+    <active>true</active>
+    <label>FaceBook</label>
+    <picklistValues>
+        <picklist>Lead_Source__c</picklist>
+        <values>
+            <fullName>Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indiamart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shopify</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lead_Type__c</picklist>
+        <values>
+            <fullName>B2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B2C</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Follow Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fresh</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

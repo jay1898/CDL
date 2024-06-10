@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Final_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+    Status__c,
+    &apos;UNDELIVERED&apos;, &apos;NDR&apos;,
+    &apos;reached at origin&apos;, &apos;RTO&apos;,
+    &apos;OUT FOR DELIVERY&apos;, &apos;OUT FOR DELIVERY&apos;,
+    TEXT(Status__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Final Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

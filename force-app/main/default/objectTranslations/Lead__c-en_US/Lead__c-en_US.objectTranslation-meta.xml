@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lead</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Leads</value>
+    </caseValues>
+    <layouts>
+        <layout>FaceBook Page Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>IndiaMart Page Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Query Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label></label>
+        <name>FaceBook</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>IndiaMart</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

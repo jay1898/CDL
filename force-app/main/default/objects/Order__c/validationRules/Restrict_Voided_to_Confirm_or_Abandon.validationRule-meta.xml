@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Voided_to_Confirm_or_Abandon</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISCHANGED(Status__c),
+  OR(
+    AND(ISPICKVAL(Status__c, &apos;Abandoned&apos;), ISPICKVAL(PRIORVALUE(Status__c), &apos;voided&apos;)),
+    AND(ISPICKVAL(Status__c, &apos;Confirm&apos;), ISPICKVAL(PRIORVALUE(Status__c), &apos;voided&apos;))
+  )
+)</errorConditionFormula>
+    <errorMessage>You can not change Status From voided to Abandoned	 or Confirm.</errorMessage>
+</ValidationRule>

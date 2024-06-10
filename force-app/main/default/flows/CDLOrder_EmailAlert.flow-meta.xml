@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>SendConfirmOrderEmail</name>
+        <label>SendConfirmOrderEmail</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.Account__r.Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>getOrgWideEmailAddress.Address</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>test</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>OrderConfirmBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>SendOrderDelivered</name>
+        <label>SendOrderDelivered</label>
+        <locationX>842</locationX>
+        <locationY>755</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.Account__r.Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>getOrgWideEmailAddress.Address</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Order Delivered</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>OrderDeliveredBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>SendOrderOutforDelivery</name>
+        <label>SendOrderOutforDelivery</label>
+        <locationX>578</locationX>
+        <locationY>755</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.Account__r.Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>getOrgWideEmailAddress.Address</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Order Out for Delivery</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>OrderOutforDeliveryBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>SendOrderShipped</name>
+        <label>SendOrderShipped</label>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.Account__r.Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>getOrgWideEmailAddress.Address</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Order Shipped</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>OrderShippedBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <decisions>
+        <name>checkValidEmail</name>
+        <label>checkValidEmail</label>
+        <locationX>974</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ifEmailFound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getAccountRecord.Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getOrgWideEmailAddress</targetReference>
+            </connector>
+            <label>ifEmailFound</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>OrderStatusSendEmail</name>
+        <label>OrderStatusSendEmail</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IsVerified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.isVerified__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.isVerified__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SendConfirmOrderEmail</targetReference>
+            </connector>
+            <label>IsVerified</label>
+        </rules>
+        <rules>
+            <name>OrderShipped</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Order_Delivery_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>in transit</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Order_Delivery_Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SendOrderShipped</targetReference>
+            </connector>
+            <label>OrderShipped</label>
+        </rules>
+        <rules>
+            <name>OrderOutforDelivery</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Order_Delivery_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Out for Delivery</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Order_Delivery_Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SendOrderOutforDelivery</targetReference>
+            </connector>
+            <label>OrderOutforDelivery</label>
+        </rules>
+        <rules>
+            <name>OrderDelivered</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Order_Delivery_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DELIVERED</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Order_Delivery_Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SendOrderDelivered</targetReference>
+            </connector>
+            <label>OrderDelivered</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Order EmailAlert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CDLOrder EmailAlert</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>getAccountRecord</name>
+        <label>getAccountRecord</label>
+        <locationX>974</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>checkValidEmail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>getOrgWideEmailAddress</name>
+        <label>getOrgWideEmailAddress</label>
+        <locationX>578</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>OrderStatusSendEmail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DisplayName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CDLOrderEmails</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OrgWideEmailAddress</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>848</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>getAccountRecord</targetReference>
+        </connector>
+        <object>Order__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>OrderConfirmBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hello {!$Record.Account__r.Name},
+
+Thank you for placing order {!$Record.Name} with us.
+
+Order details: 
+Amount: ₹{!$Record.Grand_Total__c}
+
+We have started processing your Order!
+
+Tracking details will be shared soon.
+
+
+
+Thanks,
+Fiery Flair</text>
+    </textTemplates>
+    <textTemplates>
+        <name>OrderDeliveredBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!$Record.Account__r.Name},
+
+We&apos;re delighted to inform you that your order has been successfully delivered to the address provided.
+
+We hope your package arrived safely and meets your expectations. If you have any questions or need further assistance, please reach out to our customer support team at +91 7048141581.
+
+Thank you for choosing Fiery Flair! We appreciate your business.
+
+
+
+Thanks,
+Fiery Flair</text>
+    </textTemplates>
+    <textTemplates>
+        <name>OrderOutforDeliveryBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hello {!$Record.Account__r.Name},
+
+Exciting news! Your order {!$Record.Name} is now out for delivery and will be arriving soon.
+
+Please ensure that someone is available at the delivery address to receive the package. If you have any special delivery instructions or if you won&apos;t be available, please let us know as soon as possible.
+
+Thank you for choosing Fiery Flair! We appreciate your business.
+
+
+
+Thanks,
+Fiery Flair</text>
+    </textTemplates>
+    <textTemplates>
+        <name>OrderShippedBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hello {!$Record.Account__r.Name},
+
+We have shipped your Order {!$Record.Name}.
+
+Order details
+Here&apos;s the amount you will have to pay via COD: ₹{!$Record.Grand_Total__c} (Only for COD order)
+
+You can track your order from this link
+{!$Record.Tracking_URL__c}
+
+
+
+Thanks,
+Fiery Flair</text>
+    </textTemplates>
+</Flow>

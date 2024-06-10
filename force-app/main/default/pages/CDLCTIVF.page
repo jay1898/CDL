@@ -1,0 +1,87 @@
+<apex:page showChat="false" sidebar="false" showHeader="false" standardStylesheets="false" docType="html-5.0" Controller="LeadRemoteController" applyHtmlTag="false" applyBodyTag="false" contentType="text/html"  tabStyle="Lead">
+    <apex:outputText escape="false" value="{!" <!DOCTYPE html>"}" />
+    <html class="no-js">
+
+    <head>
+      <meta charset="utf-8"></meta>
+      <base></base>
+      <apex:includeScript value="/support/console/32.0/integration.js" />
+      <script type="text/javascript" src="/support/api/38.0/lightning/opencti_min.js"></script>
+      <apex:includeScript value="//code.jquery.com/jquery-1.11.3.min.js"/>
+      <script type="application/javascript">
+        if (typeof Visualforce !== 'undefined') {
+          if (Visualforce && Visualforce.remoting) {
+            Visualforce.remoting.timeout = 120000; // Set timeout at page level
+          }
+        }
+        
+        var isLightning = window.location.href.indexOf('lightning') >= 0;
+        var old_user_extension_id="";
+        var element = document.getElementsByTagName('base')[0];
+        console.log('isLightning = ' + isLightning);
+        var attrValue;
+        if (isLightning) {
+          attrValue = "{!URLFOR($Resource.CDLpbxCTI,'PbxCTI/lightning/')}";
+        } else {
+          attrValue = "{!URLFOR($Resource.CDLpbxCTI,'classic/')}";
+        }
+        element.setAttribute('href', attrValue);
+        $(document).ready(function(){
+            localStorage.setItem('salesforceUrl',window.location.href);
+            localStorage.setItem('clickToDial',"true");
+            var user_profile = localStorage.getItem('tfn-auth-profile');
+            if(user_profile){
+                var user_profile_array= JSON.parse(user_profile);
+                var user_extension_id = user_profile_array['user_agent'];
+            }
+            if(user_extension_id){
+            console.log('Visualforce Page User Extension Id Check.');
+                     
+                    
+                    
+                        $("#main_body").load("main.html");
+                    
+                    
+                
+            }
+            else{
+               $("#main_body").load("index.html");
+            }
+           
+        });
+        
+       window.addEventListener('storage', function(e) {  
+            localStorage.setItem('salesforceUrl',window.location.href);
+            var user_profile = localStorage.getItem('tfn-auth-profile');
+            if(user_profile){
+                var user_profile_array= JSON.parse(user_profile);
+                var user_extension_id = user_profile_array['user_agent'];
+            }else{
+                var user_extension_id="";
+            }
+            
+            if(user_extension_id!=old_user_extension_id){
+            
+                if(user_extension_id){
+                    console.log('Visualforce Page storage Check.');
+                        if(localStorage.getItem('salesforcelogin') == 0){
+                            $("#main_body").load("main.html");
+                            localStorage.setItem('salesforcelogin',1); 
+                        }
+                    old_user_extension_id = user_extension_id;
+                        
+                 
+                }
+                else{
+                      $("#main_body").load("index.html");
+                      old_user_extension_id="";
+                }
+            }
+        });
+        
+      </script>
+      <body><div id="main_body"></div>
+  </body>
+  </head>
+    </html>
+</apex:page>

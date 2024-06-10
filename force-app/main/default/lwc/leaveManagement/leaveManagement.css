@@ -1,0 +1,25 @@
+.onLeave {
+   width: 10px;
+    height: 10px;
+	margin-right: 10px;
+    background-color: #D20000;
+}
+
+.available{
+	 width: 10px;
+    height: 10px;
+	margin-right: 10px;
+    background-color: #0070D2;
+}
+
+ .slds-checkbox_toggle [type=checkbox]:checked+.slds-checkbox_faux_container .slds-checkbox_faux{
+        background-color: #D20000 !important;
+    }
+    
+    .slds-checkbox_toggle .slds-checkbox_faux {
+        background-color: #0070D2 !important;
+    }
+	
+.slds-checkbox_faux_container {
+        position: relative;
+      }

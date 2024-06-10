@@ -1,0 +1,256 @@
+<apex:page controller="LeadRemoteController" tabStyle="Lead">
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"/>
+  <html>
+<head>
+      <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family:arial;
+    color: #333;
+    background-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    background-color: #475264;
+}
+
+
+.phone
+{
+    margin-top: 15px;
+    background: #fff;
+}
+
+
+</style>
+</head>
+
+<script>
+
+        function apiHit(){
+        
+             $.ajax({
+                    type : "POST",
+                    url : "https://pbx-tfn-ari.therealpbx.com/api/v1/auth/login_crm",
+                    data : {
+                            "email" : "anup.tripathi@myrealdata.net",
+                            "password" : "Asdf@123" 
+                       },
+                    success : function(result){
+                        alert("Success : " + result);
+                    }
+                });
+        }
+        
+        function savePhoneToLocalStorage(phone1){
+            
+            if (typeof(Storage) !== "undefined") {
+                localStorage.setItem("phone", phone1);
+            } else {
+                alert("Error! Browser doesn't support Web storage. It could affect the performance. Please use another browser");
+            }
+            
+        }
+        
+        function callApiHit(){
+        
+            $('#tr_id').hide();
+            $('#tr_lead').hide();
+            $('#tr_account').hide();
+            $('#tr_duration').hide();
+        
+            callApiHitUtil(false , false);
+        }
+        
+        function callApiHitUtil(flag , isTaskAdded){
+        
+            $.ajax({
+                    type : "GET",
+                    url : "https://pbx-tfn-ari.therealpbx.com/api/v1/live_calls?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvcGJ4LXRmbi1hcmkudGhlcmVhbHBieC5jb21cL2FwaVwvdjFcL2F1dGhcL2xvZ2luX2NybSIsImlhdCI6MTUzNjU3NjQzMiwiZXhwIjoxODM2NTc2NDMyLCJuYmYiOjE1MzY1NzY0MzIsImp0aSI6IjB2ZTk0dnJ4UkNxRnhudG0iLCJzdWIiOjJ9.YOgzItybABUndehfb7aj8Cqk0EPvtMNmliBQ6pwZapg",
+                    success : function(result){
+                        
+                        console.log(result);
+                        
+                       if( result.length > 0 )
+                       {
+                           var phone = '123456789';//result[0]['source'];
+                            
+                           savePhoneToLocalStorage(phone);
+                            
+                           $('#call_id').html(phone);
+                            $('#tr_duration').show();
+                            $('#tr_duration1').html(result[0]['call_time']);
+                               
+                           if( flag == false )
+                           {
+                               $('#tr_id').show();
+                            
+                               flag = true;
+                           
+                               Visualforce.remoting.Manager.invokeAction( '{!$RemoteAction.LeadRemoteController.getleads}', phone,
+                                function(result1, event){
+                                    
+                                    // if account is present
+                                    if( result1.length > 0 )
+                                    {
+                                        $('#tr_lead').show();
+                                        $('#lead_name').html(result1[0]['FirstName']);
+                                    }
+                                    // if account is not present
+                                    else
+                                        $('#tr_lead').hide();
+                                
+                                });
+                                
+                                 Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.LeadRemoteController.getaccounts}', phone,
+                                        function(result2, event){
+                                        
+                                            if( result2.length > 0 )
+                                            {
+                                                    $('#tr_account').show();
+                                                    $('#tr_account1').html("<a href = 'https://www.google.com'>" + result2[0]['Name'] + "<a>");
+                                             }
+                                            // if account is not present
+                                            else
+                                                $('#tr_account').hide();
+                                        
+                                        });
+                            }
+                       
+                           if( result[0]['state'] == 'Ringing' )
+                           {
+                               $('#cal_status').html(result[0]['state']);
+                               $('#cal_status').css('color', 'red');
+                               
+                               isTaskAdded = false;
+                           }
+                           else if( result[0]['state'] == 'Answered' )
+                           {
+                               $('#cal_status').html(result[0]['state']);
+                               $('#cal_status').css('color', '#54B066');
+                               
+                               isTaskAdded = false;
+                           }
+                       }
+                       else
+                       {
+                           var status = $('#cal_status').text();
+                       
+                           if( status != '' )
+                           {
+                               $('#cal_status').css('color', 'red');
+                               $('#cal_status').html('Disconnected');
+                               
+                               if( isTaskAdded == false )
+                               {
+                                   console.log("Task Added");
+                                   addTask();
+                                }
+                                
+                               isTaskAdded = true;
+                           }
+                           else
+                           {
+                               
+                               isTaskAdded = false;
+                               $('#cal_status').html('');
+                           }
+                               
+                            flag = false;
+                       }
+                       
+                       callApiHitUtil(flag , isTaskAdded);
+                       
+                    }
+                });
+            
+        }
+        
+        function addTask(){
+        
+            var today = new Date();
+            var date = (today.getMonth()+1)+'/'+today.getDate() + '/' + today.getFullYear();
+            
+            // get phone number from local storage
+            var phone = localStorage.getItem("lastname");
+            
+            Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.LeadRemoteController.insertTasks}', phone , date,
+                function(result2, event){
+                    console.log(result2);
+                });
+        }
+        
+        function getReports(){
+        
+            Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.LeadRemoteController.getReports}',
+                function(result2, event){
+                    console.log(result2);
+                });
+        }
+
+</script>
+
+<body style="margin: 0px;" onload = "callApiHit()">
+
+<button onclick = 'addTask()'>Add task</button>
+<button onclick = 'getReports()'>Get Reports</button>
+
+  <div class="container">
+    <div class="row">
+        <div class="phone" style="padding: 0; width: 300px; margin: 0 auto;border-radius: 20px">
+            <div class="row1">
+            <div class="container">
+              <table class="table" id = 'myTable' >
+                <thead>
+                  <tr>
+                    <th id="call_type">Inbound Call:</th>
+                    <th id="cal_status" style="color:   #54B066"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id= "tr_id">
+                    <td>Call Id</td>
+                    <td id="call_id"></td>
+                  </tr>
+                  <tr id = "tr_lead">
+                    <td id="lead">Lead</td>
+                    <td id="lead_name"></td>
+                  </tr>
+                  <tr id = "tr_account">
+                    <td id="account">Account</td>
+                    <td id="tr_account1"></td>
+                  </tr>
+                  <tr  id = "tr_duration">
+                    <td id = "duration">Duration</td>
+                    <td id = 'tr_duration1'>00:00</td>
+                  </tr>
+                </tbody> 
+              </table>
+            </div>
+
+            </div>
+            </div>
+            <br/>
+            
+
+    </div>
+
+</div>
+     
+</body>
+</html>
+</apex:page>

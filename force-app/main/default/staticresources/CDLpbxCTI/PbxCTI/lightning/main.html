@@ -1,0 +1,1987 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: arial;
+            color: #333;
+            background-size: 100%;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: none;
+        }
+
+        p {
+            margin: 0;
+            padding: 0 0 10px 0;
+            line-height: 13px;
+            color: #a9a9a9;
+        }
+
+        .span4 {
+            flex: 0 0 33.33%;
+            max-width: 33.33%;
+            text-align: center;
+            padding: 6px;
+        }
+
+        .phone {
+            background: #fff;
+        }
+
+        .tel {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            border: 1px solid #9e9e9e;
+            border-radius: 0px;
+        }
+
+        .num-pad .span4:nth-child(10) .txt {
+            margin-top: 15px !important;
+        }
+
+        .num-pad {
+            padding: 15px 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .num {
+            -webkit-border-radius: 999px;
+            -moz-border-radius: 999px;
+            height: 40px;
+            width: 40px;
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+            border-radius: 50%;
+            margin-top: 0px;
+            display: inline-block;
+            text-align: center;
+            border: 1px #ddd solid;
+
+        }
+
+        #search-form {
+            border-bottom: 1px #ddd solid;
+            padding-bottom: 3px;
+        }
+
+        .num:hover {
+            border: 1px #28a745 solid;
+            color: #fff;
+
+        }
+
+        .txt {
+            font-size: 17px;
+            text-align: center;
+            margin-top: 0px;
+            font-family: arial;
+            line-height: 40px;
+            color: #333;
+        }
+
+        .small {
+            font-size: 10px;
+        }
+
+        .btn {
+            font-weight: bold;
+            -webkit-transition: .1s ease-in background-color;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {}
+
+        .spanicons {
+            width: 72px;
+            float: left;
+            text-align: center;
+            margin-top: 40px;
+            color: #9e9e9e;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .spanicons:hover {
+            color: #3498db;
+        }
+
+        .tab {
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+
+        .topright {
+            float: right;
+            cursor: pointer;
+            font-size: 28px;
+        }
+
+        .topright:hover {
+            color: red;
+        }
+
+        .text-input-wrapper {
+            border: 1px solid;
+            padding: 1px 0 1px 1px;
+            display: inline-block;
+            border: none;
+        }
+
+        .text-input-wrapper input {
+            border: none;
+            background: none;
+            outline: none;
+            padding: 0 0 0 5px;
+            margin: 0 0;
+        }
+
+        .text-input-wrapper span {
+            cursor: pointer;
+            color: #666;
+            font-weight: normal;
+            font-size: 30px;
+            visibility: hidden;
+        }
+
+        .mdi_btn {
+            background: none;
+            border: none;
+            height: 24px;
+        }
+
+        .mdi_btn:hover,
+        .mdi_btn:focus {
+            outline: none !important;
+        }
+
+        .mdi_btn i {
+            color: #319ED7;
+            font-size: 22px;
+        }
+
+        #click_to_call {
+            margin-bottom: 5px;
+        }
+
+        body {
+            padding: 40px 0 0 0 !important;
+        }
+
+        body.call-bx {
+            padding-bottom: 40px !important;
+        }
+
+        .btn-success {
+            border-radius: 0;
+            color: #fff !important;
+            font-size: 15px;
+            font-weight: normal;
+        }
+
+        #tabs {
+            background-color: #319ED7;
+            border-bottom: 2px #2687b9 solid;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+        #tabs button {
+            width: 20%;
+            color: #fff;
+            padding: 7px 0;
+        }
+
+        #tabs button i {
+            vertical-align: middle;
+        }
+
+        #tabs button:hover,
+        #tabs button:focus {
+            background-color: #2687b9;
+        }
+
+        .tab button.active {
+            background-color: #2687b9 !important;
+        }
+
+        .slds-utility-panel__header {
+            border-bottom: 2px solid #2687b9 !important;
+        }
+
+        .call-details {
+            margin: 0 4px;
+        }
+
+        .call-details .c-header {
+            margin: 7px 0 0 0;
+            background: #319ED7;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            border-radius: 3px 3px 0 0;
+            color: #fff;
+            position: relative;
+        }
+
+        .call-details .c-header button {
+            position: absolute;
+            right: 1px;
+            top: 3px;
+            background: none;
+            border: none;
+        }
+
+        .call-details .c-header button i {
+            font-size: 18px;
+        }
+
+        .call-details .c-body {
+            border: 1px #ddd solid;
+            border-top: none;
+            padding: 5px;
+        }
+
+        .c-body>table tr th {
+            background: #f0f0f0;
+            border-bottom: 1px #ddd solid;
+        }
+
+        .c-body>table tr th button {
+            background: none;
+            border: none;
+            height: 20px;
+        }
+
+        .c-body>table tr th button i {
+            font-size: 18px;
+        }
+
+        .c-body>table tr th button:hover,
+        .c-body>table tr th button:focus {
+            outline: none;
+            background: none;
+        }
+
+        .c-body input,
+        .c-body select,
+        .c-body textarea {
+            border: 1px #ddd solid;
+            border-radius: 2px !important;
+            font-size: 13px;
+        }
+
+        .c-body input:hover,
+        .c-body input:focus .c-body select:hover,
+        .c-body select:focus,
+        .c-body textarea:hover,
+        .c-body textarea:focus {
+            outline: none;
+            background: none;
+        }
+
+        table tr th,
+        table tr td {
+            font-size: 13px;
+            padding: 5px 8px !important;
+        }
+
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+
+        .TextInputWrapper {
+            position: relative;
+            display: block;
+            padding-left: 60px;
+        }
+
+        .TextInputWrapper:before {
+            content: 'From:';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 70px;
+            line-height: 35px;
+        }
+
+        .TextInputWrapper select {
+            box-shadow: none;
+            border: none;
+            background: none;
+            outline: none;
+            padding: 0;
+            margin: 0;
+            font: inherit;
+            font-size: 13px;
+            color: #000;
+            height: 35px;
+        }
+
+        .TextInputWrapper select:hover,
+        .TextInputWrapper select:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .sameLine {
+            width: 100%;
+            margin: 6px 6px 6px 6px;
+            font-size: 12px;
+            background-color: #2687b9;
+            color: white;
+            border-radius: 0px;
+            padding: 6px;
+            font-family: arial;
+        }
+    </style>
+</head>
+
+<body style="width: 350px;margin-left:auto;margin-right:auto;">
+    <div class="tab" id="tabs">
+        <button class="tablinks" title="Dial Pad" onclick="openCity(event, 'dial_pad')" id="defaultOpen"><i
+                class="material-icons">dialpad</i></button>
+        <button class="tablinks" title="Active Calls" onclick="openCity(event, 'call')" id="call_tab"><i
+                class="material-icons">call</i></button>
+        <button class="tablinks" title="Settings" onclick="openCity(event, 'settings')"><i
+                class="material-icons">settings</i></button>
+        <button class="tablinks" title='Refresh' onclick="openCity(event, 'refresh_frame')" id="refresh_iframe"><i
+                id="refresh_iframe_icon" class="material-icons">refresh</i></button>
+        <button class="tablinks" title="Logout" onclick="openCity(event, 'logout')"><i
+                class="material-icons">power_settings_new</i></button>
+
+    </div>
+    <div class="alert" id="error-alert" style="display: none;">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <span id="error-text"></span>
+    </div>
+    <div id="dial_pad" class="tabcontent">
+        <div class="container" style="padding: 0;">
+
+            <section>
+                <div class="alert alert-warning alert-dismissible collapse fade in" style="display:none;" role="alert"
+                    id="alert_c2c">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <strong>Warning!</strong> Some error occurred. Please try again later after sometime.
+                </div>
+            </section>
+
+            <div class="row" style="margin-left:0;margin-right:0;">
+                <div class="phone" id="phone" style="padding: 0; width: 100%;">
+                    <div class="row1">
+                        <div class="col-md-12" style="padding: 0;">
+                            <form id="search-form">
+                                <div style="position: relative;">
+                                    <span style="position: absolute;left: 0px; top: 1px;">To:</span>
+                                    <span class="text-input-wrapper" style="padding-left: 60px;width: 100%;">
+                                        <input type="text" id="telNumber" placeholder="Enter Number" name="q"
+                                            autocomplete="off" style="width: 100%;"
+                                            onkeypress="return isNumberKey(event)" minlength="10"><span title="Clear"
+                                            style="position: absolute;right: 10px;top: -10px;">&times;</span>
+                                    </span>
+                                    <span class="TextInputWrapper" style="width: 100%;">
+                                        <select id="ctc_caller_id" name="ctc_caller_id" class="form-control">
+                                            <option value="">Select Number</option>
+                                        </select>
+                                    </span>
+                                </div>
+                            </form>
+                            <div class="num-pad">
+
+                                <div class="span4">
+                                    <div class="num">
+                                        <div class="txt">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="num">
+                                        <div class="txt">
+                                            2
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="num">
+                                        <div class="txt">
+                                            3
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="num">
+                                        <div class="txt">
+                                            4
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="num">
+                                        <div class="txt">
+                                            5
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="num">
+                                        <div class="txt">
+                                            6
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="num">
+                                        <div class="txt">
+                                            7
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="num">
+                                        <div class="txt">
+                                            8
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="num">
+                                        <div class="txt">
+                                            9
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="num">
+                                        <div class="txt">
+                                            *
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="num">
+                                        <div class="txt">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="num">
+                                        <div class="txt">
+                                            #
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                        <button id="click_to_call" class="btn btn-success btn-block flatbtn" disabled>CALL</button>
+                    </div>
+                </div>
+
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="call" class="tabcontent"></div>
+    <div id="logout" class="tabcontent"></div>
+    <div id="settings" class="tabcontent">
+        Logs<br>
+        <input type="checkbox" name="autoCreateCheckBox" id="autoCreateCheckBox" value="false">Auto-create Call
+        Logs<br><br>
+        CTI Pop<br>
+        <input type="checkbox" name="autoPopUpMinimizeCTI" id="autoPopUpMinimizeCTI" value="false">Auto-pop minimized
+        CTI on incoming calls<br><br>
+        <br><br>
+        <div style="width: 100%;" class="d-flex">
+            <button id="save_settings" class="btn sameLine" style="margin-left: 0px;">Save</button>
+            <button id="cancel_settings" class="btn sameLine" style="margin-left: 0px;">Cancel</button>
+            <div style="width: 100%;" id="enable_disable">
+                <button id="enable_click_to_dial" class="btn sameLine" style="  margin-left: 1px"
+                    onclick="enableClickToDial()">Enable Click to Dial</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let url = localStorage.getItem('salesforceUrl');
+        let domain = url.split("Origin=")[1].split(".com")[0];         // domain is including https:
+        s = document.createElement('script');
+        s.src = `${decodeURIComponent(domain)}.com/support/api/52.0/lightning/opencti_min.js`;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    </script>
+
+    <script>
+
+        var api_url = "https://smartflo.tatateleservices.com/api/v1";
+        // var api_url = "https://testingnew.servetel.in/api/v1";
+
+        var ifDataFetched = false;
+        // map to store the data of lead
+        var map_lead = new Map();
+        // map to store the data of lead
+        var map_lead_id = new Map();
+        // map to store the data of account
+        var map_account = new Map();
+        // map to store the data of lead
+        var map_account_id = new Map();
+        var cdr_array = {};
+        let cdrInterval = null;
+        let callApiHitInterval = null;
+
+        // store the id no to be appended to the divisions added
+        var offset_id = 1;
+        var automatic = 1;
+
+        // store the id of the division of calls
+        var calls_map = new Map();
+
+        // store the phone of the division of calls
+        var calls_map_phone = new Map();
+        var autoCreateCheckBox;
+        var autoPopUpMinimizeCTI;
+        var map_contact = new Map();
+        var map_contact_id = new Map();
+
+
+        const upperLimitInternationalOutboundEnabled = 14;
+        const upperLimitInternationalOutboundDisabled = 13;
+        const lowerLimitInternationalOutboundEnabled = 6;
+        const lowerLimitInternationalOutboundDisabled = 10;
+        let upperLimit;
+        let lowerLimit;
+
+        let prefix = ['', '0', '91', '+91'];
+
+        let firstNumber = 0;
+
+        $('#cancel_settings').click(function () {
+            openCity(event, 'dial_pad');
+        });
+
+
+        let isInternationalOutboundEnabled = localStorage.getItem('is_international_outbound_enabled');
+        if (typeof (isInternationalOutboundEnabled) == undefined || isInternationalOutboundEnabled == null || isInternationalOutboundEnabled == "" || isInternationalOutboundEnabled == '0') {
+            $('#telNumber').attr('placeholder', 'Enter Number');
+            upperLimit = upperLimitInternationalOutboundDisabled;
+            lowerLimit = lowerLimitInternationalOutboundDisabled;
+        } else {
+            $('#telNumber').attr('placeholder', 'Enter Number with prefix');
+            upperLimit = upperLimitInternationalOutboundEnabled;
+            lowerLimit = lowerLimitInternationalOutboundEnabled;
+        }
+        $("#telNumber").attr('maxlength', upperLimit);
+
+        $(document).on("click", "button", function () {
+
+            // get the id of the button pressed
+            var id1 = $(this).attr('id');
+            if (!empty(id1)) {
+                // if save log button is pressed
+                if (id1.includes("save_log")) {
+
+                    // get the no of the block
+                    var n = parseInt(id1.substring(8));
+                    var sub = $('#subject' + n).val();
+                    var desc = $('#description' + n).val();
+                    var status = $('#cal_status' + n).text();
+                    var id = $('#hidden_call_id' + n).val();
+                    var name = $('#name' + n).val();
+                    var related_to = $('#related_to' + n).val();
+                    var obj = { "subject": sub, "comments": desc, "status": "Disconnected", "saved": "false", "name": name, "related_to": related_to };
+                    var arr = {};
+                    arr[id] = obj;
+                    if (id in cdr_array) {
+                        delete cdr_array[id];
+                        cdr_array[id] = obj;
+                        localStorage.setItem('call-log', JSON.stringify(cdr_array));
+                    } else if (id) {
+                        cdr_array[id] = obj;
+                        localStorage.setItem('call-log', JSON.stringify(cdr_array));
+                    }
+                }
+                // if save log button is pressed
+                else if (id1.includes("close_button")) {
+                    var n = parseInt(id1.substring(12));
+                    if ($('#cal_status' + n).html() == 'Disconnected') {
+                        // remove the last call block 
+                        var obj;
+                        var sub = $('#subject' + n).val();
+                        var desc = $('#description' + n).val();
+                        var status = $('#cal_status' + n).text();
+                        var id = $('#hidden_call_id' + n).val();
+                        var name = $('#name' + n).val();
+                        var related_to = $('#related_to' + n).val();
+                        obj = { "subject": sub, "comments": desc, "status": status, "saved": "true", "name": name, "related_to": related_to };
+                        if (autoCreateCheckBox == "true") {
+
+                            var arr = {};
+                            arr[id] = obj;
+                            var activity_log = localStorage.getItem('activity-log');
+                            if (id in cdr_array) {
+                                delete cdr_array[id];
+                                cdr_array[id] = obj;
+                            } else if (id) {
+                                cdr_array[id] = obj;
+                            }
+
+                            localStorage.setItem('call-log', JSON.stringify(cdr_array));
+                        } else if (autoCreateCheckBox == "false") {
+                            var id = $('#hidden_call_id' + n).val();
+                            var activity_log = localStorage.getItem('activity-log');
+
+                            if (cdr_array) {
+                                if (id in cdr_array) {
+
+                                    delete cdr_array[id];
+                                    cdr_array[id] = obj;
+                                }
+                                localStorage.setItem('call-log', JSON.stringify(cdr_array));
+                            }
+
+                        }
+                        $('#call-details' + n).remove();
+                        // delete entry from map
+                        calls_map.delete(n);
+                        calls_map_phone.delete(n);
+                    }
+                }
+                else if (id1.includes('downArrow')) {
+                    // get the no of the block
+                    var n = parseInt(id1.substring(9));
+                    $('#collapse1' + n).toggle(300);
+                }
+                else if (id1.includes('pause_resume')) {
+                    var n = parseInt(id1.substring(12));
+
+                    if ($('#if_timer_should_be_executed' + n).val() == 'true') {
+                        $('#pause_resume' + n).html('<i class="material-icons">play_circle_outline</i>');
+                        $('#if_timer_should_be_executed' + n).val('false');
+
+                    }
+                    else {
+                        $('#pause_resume' + n).html('<i class="material-icons">pause_circle_outline</i>');
+                        $('#if_timer_should_be_executed' + n).val('true');
+                        setTimer(n);
+                    }
+                }
+                else if (id1.includes('save_settings')) {
+                    openCity(event, 'dial_pad');
+
+                    if ($('#autoCreateCheckBox').is(':checked'))
+                        autoCreateCheckBox = "true";
+                    else
+                        autoCreateCheckBox = "false";
+
+                    if ($('#autoPopUpMinimizeCTI').is(':checked'))
+                        autoPopUpMinimizeCTI = "true";
+                    else
+                        autoPopUpMinimizeCTI = "false";
+
+                    // TataCTI.LeadRemoteController.test(autoCreateCheckBox, autoPopUpMinimizeCTI, function (result, event) {
+                    // });
+
+                    localStorage.setItem("autoCreateCheckBox", autoCreateCheckBox);
+                    localStorage.setItem("autoPopUpMinimizeCTI", autoPopUpMinimizeCTI);
+                }
+            }
+        });
+
+        var token;
+        var ajax_call;
+
+        // set the number of incoming calls as 0
+        localStorage.setItem("incoming_calls_count", 0);
+
+        // becomes true when the data is completely fetched from leads and accounts controller
+        var tfn_auth = localStorage.getItem("tfn-auth");
+        var auth = JSON.parse(tfn_auth);
+        token = auth['access_token'];
+        var temp_array = new Array();
+
+        var logs = localStorage.getItem("call-log");
+        if (logs) {
+            var logs_array = JSON.parse(logs);
+            for (var k in logs_array) {
+                logs_array[k].saved = "true";
+            }
+            cdr_array = logs_array;
+        }
+        console.log(ifDataFetched, 'beforecheck');
+        if (ifDataFetched == false) {
+            console.log(ifDataFetched, 'aftercheck');
+            LeadRemoteController.getPermission(function (result, event) {
+                // console.log(result, 'getPermission');
+                if (!result || result.length == 0) {
+                    // console.log("NEELUUUUU");
+                    // autoCreateCheckBox = "false";
+                    // autoPopUpMinimizeCTI = "false";
+                    // TataCTI.LeadRemoteController.insertPermission(autoCreateCheckBox, autoPopUpMinimizeCTI, function (result, event) {
+                    //     console.log(result, 'insertPermisson');
+                    // });
+
+                } else {
+                    // autoCreateCheckBox = result[0]['TataCTI__AutoCreateCheckBox__c'];
+                    // autoPopUpMinimizeCTI = result[0]['TataCTI__AutoPopUpMinimizeCTI__c'];
+                }
+
+                if (autoCreateCheckBox == "true")
+                    $('#autoCreateCheckBox').prop('checked', true);
+                else
+                    $('#autoCreateCheckBox').prop('checked', false);
+
+                if (autoPopUpMinimizeCTI == "true")
+                    $('#autoPopUpMinimizeCTI').prop('checked', true);
+                else
+                    $('#autoPopUpMinimizeCTI').prop('checked', false);
+                // set the settings checkbox state in local storage
+                localStorage.setItem("autoCreateCheckBox", autoCreateCheckBox);
+                localStorage.setItem("autoPopUpMinimizeCTI", autoPopUpMinimizeCTI);
+            });
+
+            ifDataFetched = true;
+            callApiHitUtil();
+        }
+
+
+        function checkIfPhoneExist(phone) {
+            var originalNumber = phone;
+            phone = prefixedNumbers(phone); 
+            var promise = new Promise(function (resolve, reject) {
+     
+           LeadRemoteController.GetContactInfoUsingPhone(phone, function (contactResult, event) {
+                if (contactResult.length > 2) {
+                    var map_contact_temp = new Map();
+                    var map_contact_id_temp = new Map();
+                    var contactInfo = JSON.parse(contactResult.replace(/&quot;/g, '"'));
+
+                    var i;
+                    for (i = 0; i < contactInfo.length; i++)  // add the lead data to map
+                    {
+                        if (map_contact_temp.has(contactInfo[i]['Phone']) == false) {
+                            map_contact_temp.set(contactInfo[i]['Phone'], [contactInfo[i]['Name']]);
+                            map_contact_id_temp.set(contactInfo[i]['Phone'], [contactInfo[i]['Id']]);
+                        } else {
+                            map_contact_temp.get(contactInfo[i]['Phone']).push(contactInfo[i]['Name']);
+                            map_contact_id_temp.get(contactInfo[i]['Phone']).push(contactInfo[i]['Id']);
+                        }
+
+                    }
+                    // update the maps
+                    map_contact = map_contact_temp;
+                    map_contact_id = map_contact_id_temp;
+                    resolve(true);
+                } else {
+                   resolve(false);
+                }
+
+            });
+
+
+           LeadRemoteController.GetLeadInfoUsingPhone(phone, function (leadResult, event) {
+                if (leadResult.length > 2) {
+                    var map_lead_temp = new Map();
+                    var map_lead_id_temp = new Map();
+                    var leadInfo = JSON.parse(leadResult.replace(/&quot;/g, '"'));
+
+                    var i;
+                    for (i = 0; i < leadInfo.length; i++)  // add the lead data to map
+                    {
+                        let lName = leadInfo[i]['LastName'];
+                        let fName = leadInfo[i]['FirstName'];
+                        let name = "(No name)";
+                        if (typeof (fName) == undefined || fName == null || fName == "") {
+
+                            if (!(typeof (lName) == undefined || lName == null || lName == "")) {
+                                name = lName;
+                            }
+                        } else {
+                            name = fName;
+                        }
+
+                        if (map_lead_temp.has(leadInfo[i]['Phone']) == false) {
+                            map_lead_temp.set(leadInfo[i]['Phone'], [name]);
+                            map_lead_id_temp.set(leadInfo[i]['Phone'], [leadInfo[i]['Id']]);
+                        } else {
+                            map_lead_temp.get(leadInfo[i]['Phone']).push(name);
+                            map_lead_id_temp.get(leadInfo[i]['Phone']).push(leadInfo[i]['Id']);
+                        }
+                    }
+
+                    // update the maps
+                    map_lead = map_lead_temp;
+                    map_lead_id = map_lead_id_temp;
+                } else {
+                   resolve(false);
+                }
+
+            });
+
+
+
+            LeadRemoteController.GetAccountInfoUsingPhone(phone, function (accountResult, event) {
+                if (accountResult.length > 2) {
+
+                    var map_account_temp = new Map();
+                    var map_account_id_temp = new Map();
+                    var accountInfo = JSON.parse(accountResult.replace(/&quot;/g, '"'));
+
+                    var i;
+
+                    // add the lead data to map
+                    for (i = 0; i < accountInfo.length; i++) {
+                        if (map_account_temp.has(accountInfo[i]['Phone']) == false) {
+                            map_account_temp.set(accountInfo[i]['Phone'], [accountInfo[i]['Name']]);
+                            map_account_id_temp.set(accountInfo[i]['Phone'], [accountInfo[i]['Id']]);
+                        } else {
+                            map_account_temp.get(accountInfo[i]['Phone']).push(accountInfo[i]['Name']);
+                            map_account_id_temp.get(accountInfo[i]['Phone']).push(accountInfo[i]['Id']);
+                        }
+                    }
+
+                    // update the maps
+                    map_account = map_account_temp;
+                    map_account_id = map_account_id_temp;
+                    resolve(true);
+
+                } else {
+                   resolve(false);
+                }
+
+            });
+            });
+ 
+            return promise;
+        }
+
+
+
+        $(document).ready(function () {
+            var searchForm = document.getElementById('search-form'),
+                textInput = searchForm.q,
+                clearBtn = textInput.nextSibling;
+
+
+            $("#telNumber").on('keyup', function () {
+                clearBtn.style.visibility = (this.value.length) ? "visible" : "hidden";
+                if (this.value.length) {
+                    $('#click_to_call').attr('disabled', false);
+                } else {
+                    $('#click_to_call').attr('disabled', true);
+                }
+            });
+
+
+            clearBtn.onclick = function () {
+                this.style.visibility = "hidden";
+                textInput.value = "";
+                $('#click_to_call').attr('disabled', true);
+            };
+        });
+
+        function showClearButton() {
+            var searchForm = document.getElementById('search-form'),
+                textInput = searchForm.q,
+                clearBtn = textInput.nextSibling;
+            var number = $("#telNumber").val();
+            length = number.length;
+            clearBtn.style.visibility = length ? "visible" : "hidden";
+        }
+
+        function openCity(evt, cityName) {
+            if (cityName == 'refresh_frame') {
+                location.reload();
+            }
+            if (cityName == "logout") {
+                disableClickToDial();
+                map_lead.clear();
+                map_lead_id.clear();
+                map_contact.clear();
+                map_contact_id.clear();
+                map_account.clear();
+                map_account_id.clear();
+
+                clearTimeout(callApiHitInterval);
+                clearTimeout(cdrInterval);
+                callApiHitInterval = null;
+                cdrInterval = null;
+
+                localStorage.setItem('tfn-auth', "");
+                localStorage.setItem('tfn-auth-profile', "");
+                localStorage.setItem('agents', "");
+                localStorage.setItem('salesforcelogin', 0);
+                $("#main_body").load('index.html');
+
+            }
+
+            if (cityName == "settings") {
+
+
+                if (autoCreateCheckBox == "true")
+                    $('#autoCreateCheckBox').prop('checked', true);
+                else
+                    $('#autoCreateCheckBox').prop('checked', false);
+
+                if (autoPopUpMinimizeCTI == "true")
+                    $('#autoPopUpMinimizeCTI').prop('checked', true);
+                else
+                    $('#autoPopUpMinimizeCTI').prop('checked', false);
+
+            }
+
+
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+
+        function addTask(phone1, status, subject, priority, description, call_duration, call_result, call_type, whatid, whoid, lead, opportunity, unique_id, recording_url, customer_no, time, did_no) {
+
+            var today = new Date();
+            var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+
+            LeadRemoteController.insertCDR(phone1, status, subject, priority, description, date, call_duration, call_result, call_type, whatid, whoid, lead, opportunity, unique_id, recording_url, customer_no, time, did_no, function (result2, event) {
+            });
+        }
+
+        var tbl =
+            ' <div class="call-details" id="call-details" style="">' +
+            '<div class="c-header">Last Call <button id="close_button"> <i class="material-icons">close</i> </button></div>' +
+            '<div class="c-body">' +
+            '<table width="100%" border="0" cellpadding="0" cellspacing="0">' +
+            '<tr>' +
+            '<th width="50%" id="call_type">Inbound Call</th>' +
+            '<th id="cal_status" style="color:#54B066" width="40%" align="left">Missed</th>' +
+            '<th width="10%" align="center"><button id="downArrow"><i class="material-icons">keyboard_arrow_down</i> </button></th>' +
+            '</tr>' +
+            '</table>' +
+            '<table width="100%" class="table" id="timer_table" style="margin-bottom:0;">' +
+            '<tr>' +
+            '<td width="50%">Time Left</th>' +
+            '<td id="time_left" width="40%" align="left">30</th>' +
+            '<td id="" width="10%" align="center"><button id="pause_resume" class="mdi_btn"><i class="material-icons">pause_circle_outline</i></button></th>' +
+            '</tr>' +
+            '</table>' +
+
+            '<div class="collapse1" id="collapse1">' +
+            '<div id="myTableDiv" >' +
+            '<div class="" id="incoming_pop_up" style="margin:0;padding:0;">' +
+            '<div class="row" style="margin:0;">  ' +
+            '<div class="phone" style="padding: 0; margin: 0 auto;border-radius: 20px;width:100%;">' +
+            '<div class="row1">' +
+            '<div class="" style="padding:0;">' +
+            // tells whether timer should be executed or not
+            '<input type="hidden" id="if_timer_should_be_executed" name="custId" value="">' +
+            '<input type="hidden" id="hidden_call_id" name="hidden_call_id" value="">' +
+            '<table class="table" id = "myTable">' +
+            '<tbody>' +
+            '<tr>' +
+            '<td width="50%">Call Id</td>' +
+            '<td id="call_id" width="50%"></td>' +
+            '</tr>' +
+            '<tr id = "tr_lead">' +
+            '<td>Lead</td>' +
+            '<td id="lead_name"></td>' +
+            '</tr>' +
+            '<tr id = "tr_account">' +
+            '<td>Account</td>' +
+            '<td id="account_name"></td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td>Duration</td>' +
+            '<td id = "tr_duration1">00:00</td>' +
+            '</tr>' +
+            '<tr id = "tr_add_lead_button">' +
+            '<td colspan="2"><button id="add_lead" onclick="createLead(this)" style="margin:0;padding:5px 14px;color:#fff; background:#319ED7; border-radius:3px;border: none;">Lead Form</button></td>' +
+            '</tr>' +
+            '</tbody>' +
+            '</table>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '<h6>Log Call</h6>' +
+            '<input id="subject" placeholder="Subject" name="subject" style="padding: 1%; width: 100%; margin: 3px auto;border-radius: 6px" disabled>' +
+            '<div id=success_message_log style="color:green"></div>' +
+            '<textarea id="description" rows="4" cols="50" placeholder=" Description" style="padding: 1%; width: 100%; margin: 3px auto;border-radius: 6px"></textarea>' +
+            '<button type="button" class="btn btn-primary" style= "align:middle;width:100%" id="save_log" onclick="SaveLog(true);">Save Log</button>' +
+            '<button type="button" class="btn btn-primary" style= "align:middle;width:100%;display:none;" id="auto_save_log" disabled>Automatic Saving Log</button>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+
+
+        function SaveLog(flag) {
+            if (flag) {
+                var $messageDiv = $('#success_message_log');
+                $messageDiv.show().html('Log has been successfully saved');
+                setTimeout(function () { $messageDiv.hide().html(''); }, 3000);
+
+            }
+        }
+        function getIdOfElement(phone_id) {
+
+            // convert key set into array
+            // keys() return the set of keys in map
+            var arr = Array.from(calls_map.keys());
+
+            var i;
+            for (i = 0; i < arr.length; i++) {
+                // if the phone number is present
+                if (calls_map.get(arr[i]).toString() == phone_id.toString()) {
+                    return arr[i];
+                }
+
+            }
+
+            return -1;
+        }
+
+        // check if id1 is present in arr
+        function find(arr, id1) {
+
+            var i;
+
+            for (i = 0; i < arr.length; i++) {
+
+                if (arr[i] == calls_map.get(id1))
+                    return true;
+            }
+
+            return false;
+        }
+        function empty(data) {
+            if (typeof (data) == 'undefined' || data === null) {
+                return true;
+            }
+            if (typeof (data.length) != 'undefined') {
+                return data.length == 0;
+            }
+            var count = 0;
+            for (var i in data) {
+                if (data.hasOwnProperty(i)) {
+                    count++;
+                }
+            }
+            return count == 0;
+        }
+
+        function setTimer(n) {
+
+            var timeleft = parseInt($('#time_left' + n).text());
+
+            return new Promise(function (resolve, reject) {
+
+                var countdownTimer = setInterval(function () {
+
+                    // if timer is paused
+                    if ($('#if_timer_should_be_executed' + n).val() == 'false') {
+                        clearInterval(countdownTimer);
+                        return;
+                    }
+
+                    timeleft--;
+
+                    $('#time_left' + n).text(timeleft);
+
+                    $('#save_log' + n).click(
+                        function () {
+                            SaveLog(false);
+                        }
+                    );
+
+                    if (timeleft <= 0) {
+
+                        var obj;
+                        var sub = $('#subject' + n).val();
+                        var desc = $('#description' + n).val();
+                        var status = $('#cal_status' + n).text();
+                        var id = $('#hidden_call_id' + n).val();
+                        var name = $('#name' + n).val();
+                        var related_to = $('#related_to' + n).val();
+                        obj = { "subject": sub, "comments": desc, "status": status, "saved": "true", "name": name, "related_to": related_to };
+                        if (autoCreateCheckBox == "true") {
+
+                            var arr = {};
+                            arr[id] = obj;
+
+                            if (id in cdr_array) {
+                                delete cdr_array[id];
+                                cdr_array[id] = obj;
+
+                            } else if (id) {
+                                cdr_array[id] = obj;
+                            }
+                            localStorage.setItem('call-log', JSON.stringify(cdr_array));
+                        } else if (autoCreateCheckBox == "false") {
+                            var id = $('#hidden_call_id' + n).val();
+                            var activity_log = localStorage.getItem('activity-log');
+                            if (cdr_array) {
+                                if (id in cdr_array) {
+                                    delete cdr_array[id];
+                                    cdr_array[id] = obj;
+                                    localStorage.setItem('call-log', JSON.stringify(cdr_array));
+                                }
+                            }
+                        }
+                        clearInterval(countdownTimer);
+                        $('#call-details' + n).remove();
+                        calls_map.delete(n);
+                        calls_map_phone.delete(n);
+
+                    }
+                }, 1000);
+            });
+        }
+
+        // becomes true when teh loop to check for incoming calls is completely executed
+        var ifLoopExecuted = false;
+
+        // becomes true when the loop setting the Disconnected status is completely run
+        var ifCheckLoopExecuted = false;
+
+        function check_incoming() {
+            setTimeout(check_incoming, 500);
+        }
+        var last_log_id;
+        function createCdr() {
+            validityCheck().then(function () {
+                var uniqueid;
+                if (!cdr_array) {
+                } else {
+                    for (var k in cdr_array) {
+                        if (cdr_array[k].status == "Disconnected" && k != last_log_id && cdr_array[k].saved == "true") {
+                            uniqueid = k;
+                            break;
+                        }
+                        break;
+                    }
+                    var tfn_auth = localStorage.getItem("tfn-auth");
+                    var auth = JSON.parse(tfn_auth);
+                    token = auth['access_token'];
+
+                if (uniqueid) {
+                    last_log_id = uniqueid;
+                    $.ajax({
+                        url: api_url + '/call/records?call_id=' + uniqueid,
+                        type: 'GET',
+                        dataType: 'json',
+                        crossDomain: true,
+                        rejectUnauthorized: false,
+                        headers: {
+                            'accept': 'application/json',
+                            'authorization': 'Bearer ' + token
+                        },
+                        success: function (result) {
+                            var response = result;
+                            var data = response.results;
+                            if (data && data.length > 0) {
+                                var subject = cdr_array[uniqueid].subject;
+                                var description = cdr_array[uniqueid].comments;
+                                var name = cdr_array[uniqueid].name;
+                                var related_to = cdr_array[uniqueid].related_to;
+                                var call_date = data[0]['date'];
+                                var disposition = data[0]['description'];
+                                var billsec = data[0]['call_duration'];
+                                var unique_id = data[0]['call_id'];
+                                var recording_url = data[0]['recording_url'];
+                                var call_type1 = data[0]['direction'];
+                                var customer_no = data[0]['client_number'].slice(-10);
+                                if (subject == "Outbound to null") {
+                                    subject = 'Outbound to ' + customer_no;
+                                }
+                                var time = data[0]['time'];
+                                var did_no = data[0]['did_number'] ? data[0]['did_number'] : "-"
+                                addTask("", "Completed", subject, "Normal", description, billsec, disposition, call_type1, related_to, name, "", "", unique_id, recording_url, customer_no, time, did_no);
+                                delete cdr_array[uniqueid];
+                                localStorage.setItem('call-log', JSON.stringify(cdr_array));
+                            } else {
+                                last_log_id = null;
+                            }
+                        }, error: (error) => {
+                            console.log(error);
+                        }
+                    });
+                }
+
+            }
+            cdrInterval = setTimeout(createCdr, 3000);
+        });
+        }
+        createCdr();
+        // async function callApiHitUtil() {
+        function callApiHitUtil() {
+            validityCheck().then(function () {
+
+            // var endTime = new Date();
+            // var startTime = new Date(localStorage.getItem("startTime"));
+            // var secondBetweenTwoDate = Math.abs((endTime.getTime() - startTime.getTime()) / 1000);
+            // if (secondBetweenTwoDate > 3000) {
+            //     let res = await refreshToken();
+            // }
+            var tfn_auth = localStorage.getItem("tfn-auth");
+            var auth = JSON.parse(tfn_auth);
+            token = auth['access_token'];
+            var extension = localStorage.getItem('extension');
+            let agentOrExtension = localStorage.getItem('integrationType');
+
+            agentOrExtension = agentOrExtension == 1 ? 'agent_number' : 'extension';
+            ajax_call = $.ajax({
+                url: api_url + '/live_calls?' + agentOrExtension + '=' + extension,
+                type: 'GET',
+                dataType: 'json',
+                headers: {
+                    'accept': 'application/json',
+                    'authorization': 'Bearer ' + token,
+                    'content-type': "application/json"
+                },
+                rejectUnauthorized: false,
+                crossDomain: true,
+                success: function (result3) {
+
+                    var result = result3;
+                    var i, filter;
+                    // store the current available id numbers
+                    var arr = new Map();
+                    if (!result || result == 'undefined') {
+                        return;
+                    }
+                    // if there are no calls
+                    if (result.length == 0)
+                        ifLoopExecuted = true;
+                    // if there are calls
+                    else
+                        ifLoopExecuted = false;
+
+                    ifCheckLoopExecuted = false;
+                    // traverse through the result array
+                    for (i = 0; i < result.length; i++) {
+                        // if the current call is incoming call
+                        if (result[i]['direction'] == '1' || result[i]['direction'] == '2') {
+                            var x = offset_id;
+                            $('#phone').hide();
+                            var phone = result[i]['source'];
+                            if (result[i]['direction'] == '2') {
+                                if (result[i]['destination'] == '' || result[i]['destination'] == null) {
+                                    phone = result[i]['multiple_destination_name'].split('/');
+                                    phone = phone[1].substr('-10');
+                                } else {
+                                    phone = result[i]['destination'].split(',');
+                                    phone = phone[0].substr('-10');
+                                }
+                            } else {
+                            }
+                            $('#tr_add_lead_button' + x).show();
+                            // add the current call entry into map
+                            arr.set(result[i]['call_id'], true);
+                            // check if element is present or not
+                            var m = getIdOfElement(result[i]['call_id']);
+                            // if the division with given phone number is not present
+                            // var isLead = isPhonePresent(map_lead, phone);
+                           
+                            if (m == -1) {
+                                document.getElementById("call_tab").click();
+                                $("#call").append(tbl);
+                                if (autoPopUpMinimizeCTI == "true") {
+                                    sforce.opencti.setSoftphonePanelVisibility({ visible: true });
+                                }
+                                // change the id of the elements
+                                $('#call-details').attr('id', 'call-details' + x);
+                                $('#collapse1').attr('id', 'collapse1' + x);
+                                $('#downArrow').attr('id', 'downArrow' + x);
+                                $('#myTable').attr('id', 'myTable' + x);
+                                $('#call_id').attr('id', 'call_id' + x);
+                                $('#cal_status').attr('id', 'cal_status' + x);
+                                $('#cal_status').attr('id', 'cal_status' + x);
+                                $('#tr_lead').attr('id', 'tr_lead' + x);
+                                $('#lead_name').attr('id', 'lead_name' + x);
+                                $('#tr_add_lead_button').attr('id', 'tr_add_lead_button' + x);
+                                $('#add_lead').attr('id', 'add_lead' + x);
+                                $('#lead_name_link').attr('id', 'lead_name_link' + x);
+                                $('#tr_account').attr('id', 'tr_account' + x);
+                                $('#account_name').attr('id', 'account_name' + x);
+                                $('#tr_duration1').attr('id', 'tr_duration1' + x);
+                                $('#subject').attr('id', 'subject' + x);
+                                $('#description').attr('id', 'description' + x);
+                                $('#save_log').attr('id', 'save_log' + x);
+                                $('#hidden_call_id').attr('id', 'hidden_call_id' + x);
+                                $('#hidden_call_id' + x).val(result[i]['call_id']);
+                                // set the input hidden field to tell if timer should be executed or not
+                                $('#if_timer_should_be_executed').attr('id', 'if_timer_should_be_executed' + x);
+                                $('#if_timer_should_be_executed' + x).val("true");
+
+                                $('#call_id' + x).html(phone);
+                                $('#add_lead' + x).attr('data-phone', phone);
+                                // set the id of current phone in input hidden field
+                                $('#time_left').attr('id', 'time_left' + x);
+                                $('#pause_resume').attr('id', 'pause_resume' + x);
+                                $('#timer_table').attr('id', 'timer_table' + x);
+                                $('#timer_table' + x).hide();
+                                $('#call_type').attr('id', 'call_type' + x);
+
+                                if (result[i]['direction'] == '1') {
+                                    filter = result[i]['source'];
+                                }
+                                if (result[i]['type'] == 'click-to-call') {
+                                    if (result[i]['destination'] == '' || result[i]['destination'] == null) {
+                                        $('#subject' + x).val('Outbound');
+                                    } else {
+                                        var destination = result[i]['destination'].split(',');
+                                        destination = destination[0];
+                                        $('#subject' + x).val('Outbound to ' + destination);
+                                    }
+                                }
+                                else {
+                                    $('#subject' + x).val('Inbound from ' + phone);
+                                }
+                                $('#close_button').attr('id', 'close_button' + x);
+                                $('#collapse1' + x).show();
+
+                                // if the call is outbound
+                                if (result[i]['direction'] == '2')
+                                    $('#call_type' + x).html('Outbound Call');
+
+                                $('#lead_name' + x).html("");
+
+                                var name_html_code = '<select id = "name' + x + '">' +
+                                    '<option value="">Name: [None]</option>';
+                                // if the lead is present
+                                
+                                checkIfPhoneExist(phone).then((result) => {
+                                let isLead = isPhonePresent(map_lead, phone);
+                                let isAccount = isPhonePresent(map_account, phone);
+                                let isContact = isPhonePresent(map_contact, phone);
+                            
+                                if (isLead && map_lead.has(isLead)) {
+          
+                                    var k;
+                                    for (k = 0; k < map_lead.get(isLead).length - 1; k++) {
+                                        $('#lead_name' + x).append('<a href = "' + window.location.ancestorOrigins[0]  + '/lightning/r/Lead/' + map_lead_id.get(isLead)[k] + '/view" target="_top">' + map_lead.get(isLead)[k] + '</a> , ');
+                                        name_html_code += '<option value="' + map_lead_id.get(isLead)[k] + '">' + map_lead.get(isLead)[k] + ' (Lead)</option>';
+                                    }
+                                    $('#lead_name' + x).append('<a href = "' + window.location.ancestorOrigins[0] + '/lightning/r/Lead/' + map_lead_id.get(isLead)[k] + '/view" target="_top">' + map_lead.get(isLead)[k] + '</a>');
+                                    name_html_code += '<option value="' + map_lead_id.get(isLead)[k] + '">' + map_lead.get(isLead)[k] + ' (Lead)</option>';
+                                    $('#tr_lead' + x).show();
+                                } else {
+                                    $('#tr_lead' + x).hide();
+                                }
+                                // add the related to drop down menu
+                                if (isContact && map_contact.has(isContact)) {
+                                    for (k = 0; k < map_contact.get(isContact).length; k++)
+                                        name_html_code += '<option value="' + map_contact_id.get(isContact)[k] + '">' + map_contact.get(isContact)[k] + ' (Contact)</option>';
+                                }
+                                name_html_code += '</select>';
+                                $(name_html_code).insertAfter('#subject' + x);
+                                $('#account_name' + x).html("");
+                                var related_to_html = '<br><select id = "related_to' + x + '">' +
+                                    '<option value="">Related To: [None]</option>';
+
+                                // if the account is present
+                                if (isAccount && map_account.has(isAccount)) {
+                                    var k;
+                                    for (k = 0; k < map_account.get(isAccount).length - 1; k++) {
+                                        $('#account_name' + x).append('<a href = "' + window.location.ancestorOrigins[0] + 'lightning/r/Account/' + map_account_id.get(isAccount)[k] + '/view" target="_top">' + map_account.get(isAccount)[k] + '</a> , ');
+
+                                        related_to_html += '<option value="' + map_account_id.get(isAccount)[k] + '">' + map_account.get(isAccount)[k] + ' (Account)</option>';
+                                    }
+
+                                    $('#account_name' + x).append('<a href = "' + window.location.ancestorOrigins[0] + '/lightning/r/Account/' + map_account_id.get(isAccount)[k] + '/view" target="_top">' + map_account.get(isAccount)[k] + '</a>');
+
+                                    related_to_html += '<option value="' + map_account_id.get(isAccount)[k] + '">' + map_account.get(isAccount)[k] + ' (Account)</option>';
+                                    $('#tr_account' + x).show();
+                                }
+                                else
+                                    $('#tr_account' + x).hide();
+                                related_to_html += '</select>';
+                                $(related_to_html).insertAfter('#name' + x);
+                                if ($('#name' + x + ' option').length == 2) {
+                                    document.getElementById("name" + x).selectedIndex = "1";
+                                    $('#related_to' + x).prop('disabled', true);
+                                }
+
+                            });
+                            var id1 = '#call-details' + x;
+                                $('body').addClass('call-bx');
+                                $('#save_log' + x).show();
+                                $(id1).show();
+                                // add entry to map
+                                calls_map.set(offset_id, result[i]['call_id']);
+                                calls_map_phone.set(offset_id, phone);
+                                offset_id++;
+                            }
+                            else {
+                                x = m;
+                            }
+                            if ($('#cal_status' + x).html() != result[i]['state']) {// change the color for status
+                                if (result[i]['state'] == 'Ringing')
+                                    $('#cal_status' + x).css('color', 'red');
+                                else if (result[i]['state'] == 'Answered') {
+                                    $('#cal_status' + x).css('color', '#54B066');
+                                    if (result[i]['type'] == 'click-to-call') {
+                                        filter = result[i]['destination'];
+                                        if (result[i]['destination'] == '' || result[i]['destination'] == null) {
+                                            $('#subject' + x).val('Outbound');
+                                        } else {
+                                            var destination = result[i]['destination'].split(',');
+                                            destination = destination[0];
+                                            $('#subject' + x).val('Outbound to ' + destination);
+                                            filter = filter.substr('-10');
+                                        }
+                                    }
+                                }
+                                $('#cal_status' + x).text(result[i]['state']);
+                            }
+                            $('#add_lead' + x).attr('data-phone', filter);
+                            $('#tr_duration1' + x).text(result[i]['call_time']);
+                            if (autoCreateCheckBox == "true") {
+                                $('#save_log' + x).click(function () {
+                                    SaveLog(false);
+                                });
+                            }
+                        }
+                        if (i == result.length - 1)
+                            ifLoopExecuted = true;
+                    }
+                    // only run when teh above for loop is completely executed
+                    if (ifLoopExecuted == true) {
+                        // get the array of key set of id
+                        var calls_key = Array.from(calls_map.keys());
+                        // if there are no calls to be checked
+                        if (calls_key.length == 0)
+                            ifCheckLoopExecuted = true;
+                        // STORE THE NO OF DISCONNECTED CALLS
+                        var disconnected_calls = 0;
+                        // check for the elements which are now disconnected
+                        for (i = 0; i < calls_key.length; i++) {//if( find( arr , calls_key[i] ) == true )
+                            if (arr.has(calls_map.get(calls_key[i])) == false && $('#cal_status' + calls_key[i]).html() != 'Disconnected') {
+                                // set the status to disconnected
+                                $('#cal_status' + calls_key[i]).css('color', 'red');
+                                $('body').removeClass('call-bx');
+                                $('#cal_status' + calls_key[i]).html('Disconnected');
+                                $('#timer_table' + calls_key[i]).show();
+                                $('#collapse1' + calls_key[i]).toggle(300);
+                                setTimer(calls_key[i]);
+                                if (autoCreateCheckBox == "true") {
+                                    var sub = $('#subject' + calls_key[i]).val();
+                                    var desc = $('#description' + calls_key[i]).val();
+                                    var status = $('#cal_status' + calls_key[i]).text();
+                                    var id = $('#hidden_call_id' + calls_key[i]).val();
+                                    var name = $('#name' + calls_key[i]).val();
+                                    var related_to = $('#related_to' + calls_key[i]).val();
+                                    var obj = { "subject": sub, "comments": desc, "status": "Disconnected", "saved": "false", "name": name, "related_to": related_to };
+                                    if (id in cdr_array) {
+                                        delete cdr_array[id];
+                                        cdr_array[id] = obj;
+                                    } else if (id) {
+                                        cdr_array[id] = obj;
+                                    }
+                                    localStorage.setItem('call-log', JSON.stringify(cdr_array));
+                                }
+                            }
+
+                            if (arr.has(calls_map.get(calls_key[i])) == false)
+                                disconnected_calls++;
+
+                            if (i == calls_key.length - 1)
+                                ifCheckLoopExecuted = true;
+                        }
+                        // if all calls are disconnected
+                        if (disconnected_calls == calls_key.length) {
+                            $('#phone').show();
+                        }
+                    }
+                    callApiHitInterval = setTimeout(callApiHitUtil, 3000);
+                }, error: (error) => {
+                    console.log(error);
+                }
+            });
+        });
+        }
+
+        function createLead(obj) {
+            if ($(obj).attr('data-phone') !== undefined) {
+                var salesforce_url = localStorage.getItem("salesforceUrl");
+                let index = salesforce_url.indexOf('.com');
+                var salesforce_org = salesforce_url.substr(0, index);
+                var phone = $(obj).attr('data-phone');
+                LeadRemoteController.GetLeadInfo(phone, salesforce_org, function (result, event) {
+                    var x = screen.width / 2 - 700 / 2 + FindLeftWindowBoundry();
+                    var y = screen.height / 2 - 450 / 2 + FindTopWindowBoundry();
+                    window.open(result, 'Lead', 'height=485,width=700,left=' + x + ',top=' + y);
+                    return false;
+                });
+            }
+
+            function FindLeftWindowBoundry() {
+                // In Internet Explorer window.screenLeft is the window's left boundry
+                if (window.screenLeft) {
+                    return window.screenLeft;
+                }
+
+                // In Firefox window.screenX is the window's left boundry
+                if (window.screenX)
+                    return window.screenX;
+
+                return 0;
+            }
+            function FindTopWindowBoundry() {
+                // In Internet Explorer window.screenLeft is the window's left boundry
+                if (window.screenTop) {
+                    return window.screenTop;
+                }
+
+                // In Firefox window.screenY is the window's left boundry
+                if (window.screenY)
+                    return window.screenY;
+
+                return 0;
+            }
+
+        }
+
+        $(document).ready(function () {
+            autoCreateCheckBox = localStorage.getItem("autoCreateCheckBox");
+            autoPopUpMinimizeCTI = localStorage.getItem("autoPopUpMinimizeCTI");
+            if (autoCreateCheckBox == "true")
+                $('#autoCreateCheckBox').prop('checked', true);
+            else
+                $('#autoCreateCheckBox').prop('checked', false);
+
+            if (autoPopUpMinimizeCTI == "true")
+                $('#autoPopUpMinimizeCTI').prop('checked', true);
+            else
+                $('#autoPopUpMinimizeCTI').prop('checked', false);
+            // set the settings checkbox state in local storage
+            getNumbers();
+            $('.num').click(function () {
+                var num = $(this);
+                var text = $.trim(num.find('.txt').clone().children().remove().end().text());
+                var telNumber = $('#telNumber');
+                if (telNumber.val().length == upperLimit) {
+                    return;
+                }
+                $('#telNumber').val(telNumber.val() + text);
+                $('#click_to_call').attr('disabled', false);
+                showClearButton();
+            });
+            $(document).on('change', 'select', function () {
+                var id1 = $(this).attr('id');
+                if (id1.includes('name')) {
+                    var n = parseInt(id1.substring(4));
+                    if ($('#name' + n).val() != '')
+                        $('#related_to' + n).prop('disabled', true);
+                    else
+                        $('#related_to' + n).prop('disabled', false);
+                }
+                else {
+                    var n = parseInt(id1.substring(10));
+                    if ($('#related_to' + n).val() != '')
+                        $('#name' + n).prop('disabled', true);
+                    else
+                        $('#name' + n).prop('disabled', false);
+                }
+            });
+            check_incoming();
+        });
+
+        $('#click_to_call').click(function () {
+            var num = $("#telNumber").val();
+            if (num == null || num == '') {
+                $("#error-text").text("");
+                $("#error-text").text("Please Enter Number.");
+                $("#error-alert").show();
+                setTimeout(function () {
+                    if ($("#error-alert").is(':hidden') == false) {
+                        $("#error-alert").hide();
+                    }
+                }, 4000);
+                $('#click_to_call').attr('disabled', false);
+                return;
+            }
+            if (!(num.length >= lowerLimit && num.length <= upperLimit)) {
+                $("#error-text").text("");
+                $("#error-text").text("Invalid Mobile Number.");
+                $("#error-alert").show();
+                setTimeout(function () {
+                    if ($("#error-alert").is(':hidden') == false) {
+                        $("#error-alert").hide();
+                    }
+                }, 4000);
+                $('#click_to_call').attr('disabled', false);
+                return;
+            }
+
+            let caller_id = $('#ctc_caller_id').val();
+            if (caller_id == null || caller_id == '') {
+                $("#error-text").text("");
+                $("#error-text").text("Please Select a Number.");
+                $("#error-alert").show();
+                setTimeout(function () {
+                    if ($("#error-alert").is(':hidden') == false) {
+                        $("#error-alert").hide();
+
+                    }
+                }, 4000);
+                $('#click_to_call').attr('disabled', false);
+                return;
+            }
+
+            $('#click_to_call').attr('disabled', true);
+            var tfn_auth_profile = localStorage.getItem("tfn-auth-profile");
+            var auth_profile = JSON.parse(tfn_auth_profile);    
+            var extension = localStorage.getItem("extension");
+            var num = $("#telNumber").val();
+            var tfn_auth = localStorage.getItem("tfn-auth");
+            var auth = JSON.parse(tfn_auth);
+            var token = auth['access_token'];
+            var contact_no = extension;
+            if (contact_no == null || contact_no == '' || contact_no == undefined) {
+                $("#error-text").text("");
+                $("#error-text").text("Oops! Something Went Wrong Please Login Again.");
+                $("#error-alert").show();
+                setTimeout(function () {
+                    if ($("#error-alert").is(':hidden') == false) {
+                        $("#error-alert").hide();
+                    }
+                }, 4000);
+                $('#click_to_call').attr('disabled', false);
+                return;
+            }
+            checkIfPhoneExist(num);
+
+            validityCheck().then(function () {
+                console.log("3ugdjh3d");
+            let JsonData = JSON.stringify({ 'destination_number': num, 'agent_number': contact_no, 'caller_id': caller_id });
+            $.ajax({
+                url: api_url + '/click_to_call',
+                type: 'POST',
+                dataType: 'json',
+                headers: {
+                    'accept': 'application/json',
+                    'authorization': 'Bearer ' + token,
+                    'content-type': "application/json"
+                },
+                rejectUnauthorized: false,
+                data: JsonData,
+                crossDomain: true,
+                success: function (result) {
+                    $('#click_to_call').attr('disabled', false);
+                }, error: function (xhr) {
+                    $("#error-text").text("");
+                    $("#error-text").text("Oops! Something went Wrong.");
+                    $("#error-alert").show();
+                    setTimeout(function () {
+                        if ($("#error-alert").is(':hidden') == false) {
+                            $("#error-alert").hide();
+                        }
+                    }, 4000);
+                    $('#click_to_call').attr('disabled', false);
+                }
+            });
+            });
+        });
+        function refreshToken() {
+            var promise = new Promise((resolve, reject) => {
+                var tfn_auth = localStorage.getItem("tfn-auth");
+                var auth = JSON.parse(tfn_auth);
+                var token = auth['access_token'];
+
+                $.ajax({
+                    url: api_url + '/auth/refresh',
+                    type: 'POST',
+                    dataType: 'json',
+                    headers: {
+                        'accept': 'application/json',
+                        'authorization': 'Bearer ' + token
+                    },
+                    crossDomain: true,
+                    rejectUnauthorized: false,
+                    success: function (result) {
+                        var array = result;
+                        var myJSON = JSON.stringify(array);
+                        if (array && array['success'] == true) {
+                            localStorage.setItem('tfn-auth', myJSON);
+                            var startTime = new Date();
+                            localStorage.setItem('startTime', startTime);
+                            resolve(true);
+                        } else {
+                            openCity(event, 'logout');
+                            $("#error_msg").text(array['message']);
+                            reject(true);
+                        }
+                    }, error: (error) => {
+                        console.log(error);
+                        openCity(event, 'logout');
+                        reject(true);
+                    }
+                });
+            });
+            return promise;
+        }
+        document.getElementById("defaultOpen").click();
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
+        function clicktodial(phone) {
+            sforce.opencti.setSoftphonePanelVisibility({ visible: true });
+            $("#telNumber").val(phone);
+            $('#click_to_call').attr('disabled', false);
+            $('#click_to_call').click();
+        }
+
+        function getNumbers() {
+            validityCheck().then(function () {
+                var tfn_auth = localStorage.getItem("tfn-auth");
+                var auth = JSON.parse(tfn_auth);
+                var token = auth['access_token'];
+                $.ajax({
+                    url: api_url + '/my_number',
+                    type: 'GET',
+                    dataType: 'json',
+                    headers: {
+                        'authorization': 'Bearer ' + token
+                    },
+                    rejectUnauthorized: false,
+                    crossDomain: true,
+                    success: function (result) {
+                        let numbers = result;
+                        let response = '';
+                        if (numbers.length == 1) {
+                            firstNumber = numbers[0];
+                            response = `<option selected="selected">${firstNumber.alias}</option>`;
+                        } else {
+                            response = '<option value="">Select</option>';
+                            for (var j = 0; j < numbers.length; j++) {
+                                response += '<option value =' + numbers[j].alias + '>' + numbers[j].alias + '</option>'
+                            }
+                            response += '</select>';
+                        }
+                        $('#ctc_caller_id').html(response);
+
+                    },
+                    error: function () {
+                        $('#click_to_call').attr('disabled', true);
+                        $("#error-text").text("");
+                        $("#error-text").text("Oops! Something went Wrong. Please Try Again.");
+                        $("#error-alert").show();
+                        setTimeout(function () {
+                            if ($("#error-alert").is(':hidden') == false) {
+                                $("#error-alert").hide();
+                            }
+                        }, 4000);
+                        return false;
+                    }
+                });
+            });
+        }
+
+
+        function prefixedNumbers(phoneNumber) {
+            let phoneString = [];
+            phoneNumber = phoneNumber.substring(phoneNumber.length - 10, phoneNumber.length);
+            prefix.forEach((ele) => {
+                phoneString.push(ele + phoneNumber);
+            });
+            return phoneString.join(',');
+
+        }
+
+        function isPhonePresent(map, phone) {
+            let isPresent = false;
+            phone = phone.substring(phone.length - 10, phone.length);
+            prefix.forEach((ele) => {
+                if (map.has(ele + phone)) {
+                    isPresent = ele + phone;
+                }
+            });
+            return isPresent;
+        }
+
+        let callbackEnableClickToDial = function (response) {
+            if (response.success) {
+                console.log('API method call executed successfully! returnValue:', response.returnValue);
+            } else {
+                console.error('Something went wrong! Errors:', response.errors);
+            }
+        };
+
+        function enableClickToDial() {
+            sforce.opencti.enableClickToDial({ callback: callbackEnableClickToDial });
+            $(`#enable_disable`).html(function () {
+                let change = `<button id="disable_click_to_dial" class="btn sameLine" style="margin-left: 1px;" onclick="disableClickToDial()"
+               >Disable
+                Click to
+                Dial</button>`;
+                return change;
+            });
+            let enable = 1;
+            localStorage.setItem('clickToDial', enable);
+        }
+
+        let callbackDisableClickToDial = function (response) {
+            if (response.success) {
+                console.log('API method call executed successfully! returnValue:', response.returnValue);//error
+            } else {
+                console.error('Something went wrong! Errors:', response.errors);
+            }
+        };
+
+        function disableClickToDial() {
+            sforce.opencti.disableClickToDial({ callback: callbackDisableClickToDial });
+            $(`#enable_disable`).html(function () {
+                let change = `<button id="enable_click_to_dial" class="btn sameLine" style="margin-left: 1px;" onclick="enableClickToDial()"
+                >Enable
+                Click to
+                Dial</button>`;
+                return change;
+            });
+            let disable = 0;
+            localStorage.setItem('clickToDial', disable);
+        }
+
+        let listener = function (payload) {
+            if (typeof (payload.number) == undefined || payload.number == null || payload.number == "" || payload.number == '0') {
+                $('#alert_c2c').show();
+                setTimeout(function () {
+                    $("#alert_c2c").hide();
+                }, 4000);
+            } else {
+                clicktodial(payload.number);
+            }
+        };
+
+
+        $(document).ready(function () {
+            sforce.opencti.onClickToDial({ listener: listener });
+            let clickToDial = localStorage.getItem('clickToDial');
+            if (typeof (clickToDial) == undefined || clickToDial == null || clickToDial == "" || clickToDial == '0') {
+                disableClickToDial();
+            } else {
+                enableClickToDial();
+            }
+        });
+
+        function validityCheck() {
+            var promise = new Promise(function (resolve, reject) {
+                var tfn_auth = localStorage.getItem("tfn-auth");
+                var auth = JSON.parse(tfn_auth);
+                token = auth['access_token'];
+                var data = parseJwt(token);
+                var exp = data['exp'];
+                var d = new Date();
+                var seconds = Math.round(d.getTime() / 1000);
+                if (seconds > exp) {
+                    refreshToken().then((data) => {
+                        resolve(true);
+                    }, (error) => {
+                        reject(false);
+                    });
+                } else {
+                    resolve(true);
+                }
+            });
+            return promise;
+        }
+
+        function parseJwt(token) {
+            console.log(token);
+            var base64Url = token.split('.')[1];
+            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        }
+
+    </script>
+
+</body>
+
+</html>

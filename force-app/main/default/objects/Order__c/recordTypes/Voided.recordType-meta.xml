@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Voided</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Draft</compactLayoutAssignment>
+    <label>Voided</label>
+    <picklistValues>
+        <picklist>Abondoned_Cart_to_Confirm_Order__c</picklist>
+        <values>
+            <fullName>By Mistake</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CNR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coupon Code Not Working</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivery Charge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Just Browsing %2F Checking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No COD Option</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Want Discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Will Add One More Product %26 Then Place Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Will Confirm Later</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call__c</picklist>
+        <values>
+            <fullName>Customer Not Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Done</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Confirmed_Orders_to_Cancelled__c</picklist>
+        <values>
+            <fullName>Address Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>By Mistake Placed Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change of Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivery Charge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price is High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Will Add One More Product %26 Then Place Order</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Direct_RTO_Orders__c</picklist>
+        <values>
+            <fullName>Customer Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fake Remark By Courier Boy</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FollowUp_Stage__c</picklist>
+        <values>
+            <fullName>Abandoned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manifest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NDR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Stage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out for Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verified</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NDR_to_RTO_Orders__c</picklist>
+        <values>
+            <fullName>Budget Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CNR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Did Not Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fake Remark By Courier Boy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Late Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out of Station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTO Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reschedule</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Short Address Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong Number</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OFD_Orders__c</picklist>
+        <values>
+            <fullName>CNR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Did Not Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reschedule</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong Number</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OFD_to_NDR_Orders__c</picklist>
+        <values>
+            <fullName>Budget Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CNR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Did Not Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fake Remark By Courier Boy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Late Delivery Don%27t Want Now</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out of Station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reschedule</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Short Address Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong Number</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Confirmation__c</picklist>
+        <values>
+            <fullName>CNR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ship After X Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specific Date Delivery</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Delivery_Status__c</picklist>
+        <values>
+            <fullName>Abandoned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed Orders of Shopify</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELIVERED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INTRANSIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manifest</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>NDR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out for Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PENDING PICKUP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PICKUP DONE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>delayed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>in transit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>misrouted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>out of delivery area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>picked up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>picked up1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>reached at origin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>rto delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>rto in transit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>rto out for delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>rto processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>rto undelivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>shortage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>undelivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>voided</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Status__c</picklist>
+        <values>
+            <fullName>paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>voided</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RTO_to_Reship_Confirm_Orders__c</picklist>
+        <values>
+            <fullName>CNR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reship Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Want But Later</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Confirm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vendor_Store__c</picklist>
+        <values>
+            <fullName>CDL FINESHINE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FIERY FLAIR</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Abondoned_Cart_to_Confirm_Order__c</fullName>
+    <externalId>false</externalId>
+    <label>Abondoned Cart to Confirm Order</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CNR</fullName>
+                <default>false</default>
+                <label>CNR</label>
+            </value>
+            <value>
+                <fullName>By Mistake</fullName>
+                <default>false</default>
+                <label>By Mistake</label>
+            </value>
+            <value>
+                <fullName>No COD Option</fullName>
+                <default>false</default>
+                <label>No COD Option</label>
+            </value>
+            <value>
+                <fullName>Price High</fullName>
+                <default>false</default>
+                <label>Price High</label>
+            </value>
+            <value>
+                <fullName>Want Discount</fullName>
+                <default>false</default>
+                <label>Want Discount</label>
+            </value>
+            <value>
+                <fullName>Just Browsing / Checking</fullName>
+                <default>false</default>
+                <label>Just Browsing / Checking</label>
+            </value>
+            <value>
+                <fullName>Will Add One More Product &amp; Then Place Order</fullName>
+                <default>false</default>
+                <label>Will Add One More Product &amp; Then Place Order</label>
+            </value>
+            <value>
+                <fullName>Will Confirm Later</fullName>
+                <default>false</default>
+                <label>Will Confirm Later</label>
+            </value>
+            <value>
+                <fullName>Delivery Charge</fullName>
+                <default>false</default>
+                <label>Delivery Charge</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+            <value>
+                <fullName>Coupon Code Not Working</fullName>
+                <default>false</default>
+                <label>Coupon Code Not Working</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

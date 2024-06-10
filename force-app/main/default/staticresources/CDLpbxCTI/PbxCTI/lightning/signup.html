@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="icon" href="Supportedfiles/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet"
+        type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="Supportedfiles/bootstrap.css" rel="stylesheet">
+    <link href="Supportedfiles/waves.css" rel="stylesheet" />
+    <link href="Supportedfiles/animate.css" rel="stylesheet" />
+    <link href="Supportedfiles/style.css" rel="stylesheet">
+    <link href="public/favicon.png" rel="shortcut icon">
+    <title>Login - TATA</title>
+    <style type="text/css">
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body class="login-page" style="background-color:white;">
+    <div class="login-box">
+        <div class="logo">
+            <img src="public/logo1.png" title="TATA" class="center">
+        </div>
+        <div class="card" style="border-radius: 10px;">
+            <div class="body" style="padding-top:20px;">
+                <div class="alert" id="error-alert" style="display: none;">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <span id="error-text"></span>
+                </div>
+                <form id="sign_in">
+                    <input type="hidden" name="_token" value="QaPg5KoQrdU3Ir3jC9ZeEqWRK4uy0NS6LCPM9T7M">
+                    <div class="msg" style="margin-bottom: 15px;">Sign In</div>
+                    <div class="input-group" style="margin-top:15px;">
+                        <span class="input-group-addon">
+                            <i class="material-icons">email</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="email" id="email" placeholder="Login ID"
+                                required autofocus>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="password" class="form-control" name="password" id="password"
+                                placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8 p-t-5">
+                        </div>
+                        <div class="col-xs-4">
+                            <button class="btn btn-block bg-pink waves-effect" style="border-radius: 10px;"
+                                id="signin_button" onclick="login()">SIGN IN</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3"> </div>
+                        <div class="col-xs-6"><span id="error_msg" style="color:red;"></span></div>
+                        <div class="col-xs-3"> </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="Supportedfiles/jquery.min.js"></script>
+<script src="Supportedfiles/bootstrap.js"></script>
+<script src="Supportedfiles/waves.js"></script>
+<script src="Supportedfiles/jquery.validate.js"></script>
+<script src="Supportedfiles/admin.js"></script>
+<script src="Supportedfiles/sign-in.js"></script>
+<script type="text/javascript">
+
+    const internationalOutboundEnabled = 1;
+    const internationalOutboundDisabled = 0;
+    const clickToDial = 0;                          // disable by default
+    const agentExtension = 1;
+    const agentMobile = 0;
+    const salesforce_crm_id = 5;
+    var url = "https://smartflo.tatateleservices.com/api/v1";
+    // var url = "https://testingnew.servetel.in/api/v1";
+
+    function login() {
+        $('#signin_button').attr('disabled', true);
+        var tollfree_login = $("#email").val();
+        var tollfree_password = $("#password").val();
+        if (tollfree_login == '' || tollfree_password == '') {
+            $('#signin_button').attr('disabled', false);
+            return;
+        }
+        var jsonFormattedData = JSON.stringify({ 'email': tollfree_login, 'password': tollfree_password, 'crm_id': salesforce_crm_id });
+        $.ajax({
+            url: url + '/auth/login',
+            type: 'POST',
+            dataType: 'json',
+            headers: {
+                'accept': 'application/json',
+                'content-type': 'application/json'
+            },
+            async: 'false',
+            data: jsonFormattedData,
+            rejectUnauthorized: false,
+            crossDomain: true,
+            success: function (result) {
+                var array = result;
+                var myJSON = JSON.stringify(array);
+                if (array['success'] == true) {
+                    localStorage.setItem('tfn-auth', myJSON);
+                    var startTime = new Date();
+                    localStorage.setItem('startTime', startTime);
+
+                    getProfile();
+                } else {
+                    $('#signin_button').attr('disabled', false);
+                    $("#error-text").text("");
+                    $("#error-text").text(array['message']);
+                    $("#error-alert").show();
+                    setTimeout(function () {
+                        if ($("#error-alert").is(':hidden') == false) {
+                            $("#error-alert").hide();
+                        }
+                    }, 4000);
+                    return false;
+                }
+            }, error: function () {
+                $('#signin_button').attr('disabled', false);
+                $("#error-text").text("");
+                $("#error-text").text("Oops! Something went Wrong. Please Try Again.");
+                $("#error-alert").show();
+                setTimeout(function () {
+                    if ($("#error-alert").is(':hidden') == false) {
+                        $("#error-alert").hide();
+                    }
+                }, 4000);
+                return false;
+            }
+        });
+    }
+
+    function getProfile() {
+
+        var tfn_auth = localStorage.getItem("tfn-auth");
+        var auth = JSON.parse(tfn_auth);
+        var token = auth['access_token'];
+        var jsonFormattedData = {'crm_id': salesforce_crm_id};
+        $.ajax({
+            url: url + '/profile',
+            type: 'GET',
+            dataType: 'json',
+            headers: {
+                'accept': 'application/json',
+                'authorization': 'Bearer ' + token
+            },
+            rejectUnauthorized: false,
+            crossDomain: true,
+            data: jsonFormattedData,
+            success: function (result) {
+                var array = result;
+                var myJSON = JSON.stringify(array); 
+                let isInternationalOutboundEnabled = array['is_international_outbound_enabled'] ? internationalOutboundEnabled : internationalOutboundDisabled;
+                localStorage.setItem('is_international_outbound_enabled', isInternationalOutboundEnabled); 
+
+                // let integrationType = 1;
+                let integrationType = array['integration_type'] && array['integration_type'] == agentExtension ? agentExtension : agentMobile;
+
+
+                localStorage.setItem('integrationType', integrationType);
+
+                var extension = integrationType ? array['extension'] : array['user_agent'];
+                localStorage.setItem('extension', extension);
+                 
+
+                localStorage.setItem('clickToDial',clickToDial);
+
+                if (array['contact_number']) {
+                    localStorage.setItem('salesforcelogin', 0);
+                    localStorage.setItem('tfn-auth-profile', myJSON);
+                    close();
+                    //getAgent();
+                } else {
+                    localStorage.setItem('salesforcelogin', 0);
+                    $("#error-text").text("");
+                    $("#error-text").text("No Account");
+                    $("#error-alert").show();
+                    setTimeout(function () {
+                        if ($("#error-alert").is(':hidden') == false) {
+                            $("#error-alert").hide();
+                        }
+                    }, 4000);
+                    return false;
+                }
+
+            }, error: function () {
+                localStorage.setItem('salesforcelogin', 0);
+                $("#error-text").text("Oops! Something went Wrong. Please Try Again.");
+                $("#error-alert").show();
+                setTimeout(function () {
+                    if ($("#error-alert").is(':hidden') == false) {
+                        $("#error-alert").hide();
+                    }
+                }, 4000);
+                return false;
+            }
+        });
+    }
+
+    function getAgent() {
+        var tfn_auth = localStorage.getItem("tfn-auth");
+        var auth = JSON.parse(tfn_auth);
+        var token = auth['access_token'];
+
+        $.ajax({
+            url: url + '/agents',
+            type: 'GET',
+            dataType: 'json',
+            headers: {
+                'accept': 'application/json',
+                'authorization': 'Bearer ' + token
+            },
+            crossDomain: true,
+            rejectUnauthorized: false,
+            success: function (result) {
+                var array = result;
+                var myJSON = JSON.stringify(array);
+                localStorage.setItem('agents', myJSON);
+            },
+            error: function () {
+                $('#signin_button').attr('disabled', false);
+                $("#error-text").text("");
+                $("#error-text").text("Oops! Something went Wrong. Please Try Again.");
+                $("#error-alert").show();
+                setTimeout(function () {
+                    if ($("#error-alert").is(':hidden') == false) {
+                        $("#error-alert").hide();
+                    }
+                }, 4000);
+                return false;
+            }
+        });
+    }
+
+</script>
+
+</html>

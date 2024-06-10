@@ -1,0 +1,193 @@
+<template>
+	<div class="overridemodalcss"></div>
+	<lightning-card>
+		<div align="right" style="margin-right: 17px;">
+			<lightning-icon icon-name='action:info' alternative-text='info' size='xx-small' title='info'
+				onclick={viewInfoModal}></lightning-icon>
+		</div>
+		<div class="slds-grid slds-wrap">
+			<div class="slds-p-horizontal--small slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12"
+				style="margin-top: 24px;">
+				<!--RECORDS PER PAGE-->
+				<div class="slds-col">
+					<div class="slds-list_inline slds-p-bottom_xx-small">
+						<label class="slds-text-color_weak slds-p-horizontal_x-small" for="recordsPerPage"
+							style="margin-top: 7px;">Page Size:</label>
+						<div class="slds-select_container">
+							<select class="slds-select" id="recordsPerPage" onchange={handleRecordsPerPage}>
+								<template for:each={pageSizeOptions} for:item="option">
+									<option key={option} value={option}>{option}</option>
+								</template>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				class="slds-p-horizontal--small slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_2-of-12">
+				<lightning-combobox label="Order Status" class="combobox" name="Number of Records"
+					value={recordsPerOerderStatus} placeholder={recordsPerPage} options={filterOptions}
+					onchange={handlefilterChange}>
+				</lightning-combobox>
+			</div>
+			<div
+				class="slds-p-horizontal--small slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_2-of-12">
+				<lightning-combobox label="Days" class="combobox" name="Number of Records" value={recordsPerOerderDays}
+					placeholder={recordsPerPage} options={filterbyDays} onchange={handleDaysfilterChange}>
+				</lightning-combobox>
+			</div>
+			<div
+				class="slds-p-horizontal--small slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+				<lightning-input type="search" label="Search" onchange={handleKeywordChange} class="slds-m-bottom_small"
+					placeholder="Search" value={Keyword}></lightning-input>
+			</div>
+		</div>
+		<table class="slds-table slds-table_cell-buffer slds-table_bordered tableFormat" style="table-layout: fixed;">
+			<thead style="background-color: rgba(156, 140, 125, 0.1);">
+				<tr style="width: 839.51px; height: 36px;">
+					<th class="tableHeader" scope="col">Order Verified</th>
+					<th class="tableHeader" scope="col">Customer Name</th>
+					<th class="tableHeader" scope="col">Customer Phone</th>
+					<th class="tableHeader" scope="col">Order Name</th>
+					<th class="tableHeader" scope="col">Order Status</th>
+					<th class="tableHeader" scope="col">Payment Status</th>
+					<th class="tableHeader" scope="col">Deliver Status</th>
+					<th class="tableHeader" scope="col">FollwUp Stage</th>
+					<th class="tableHeader" scope="col">Pending Followup</th>
+					<th class="tableHeader" scope="col">Next FollowUp</th>
+					<!--<th class="tableHeader" scope="col">Create Date</th>-->
+				</tr>
+			</thead>
+			<tbody> <template for:each={allOrders} for:item="orders" for:index="index">
+					<tr key={orders.Id}>
+						<template if:true={orders.isVerified__c}>
+							<td class="tableRecords">
+								<lightning-icon icon-name='action:approval' alternative-text='approval' size='xx-small'
+									title='approval'></lightning-icon>
+							</td>
+						</template>
+						<template if:false={orders.isVerified__c}>
+							<td class="tableRecords">
+								<lightning-icon icon-name='action:remove' alternative-text='remove' size='xx-small'
+									title='remove'></lightning-icon>
+							</td>
+						</template>
+						<td class="tableRecords"><a onclick={goToAccount}
+								data-index={index}>{orders.Account__r.Name}</a></td>
+						<td class="tableRecords">
+								<lightning-click-to-dial value={orders.Account__r.Phone__c}> {orders.Account__r.Phone__c}</lightning-click-to-dial>
+							
+							</td>
+						<td class="tableRecords"><a onclick={getVerificationDetails}
+								data-index={index}>{orders.Name}</a></td>
+						<td class="tableRecords">{orders.Status__c}</td>
+						<td class="tableRecords">{orders.Payment_Status__c}</td>
+						<td class="tableRecords">{orders.Order_Delivery_Status__c}</td>
+						<td class="tableRecords">{orders.FollowUp_Stage__c}</td>
+							<td class="tableRecords"><lightning-formatted-date-time
+													value={orders.Pending_Followup_Time__c} year="numeric"
+													month="numeric" day="numeric" hour="2-digit" minute="2-digit"
+													time-zone-name="short"></lightning-formatted-date-time></td>
+						<td class="tableRecords"><lightning-formatted-date-time
+													value={orders.Next_FollowUp_Time__c} year="numeric"
+													month="numeric" day="numeric" hour="2-digit" minute="2-digit"
+													time-zone-name="short"></lightning-formatted-date-time></td>
+						<!--<td class="tableRecords">{orders.CreatedDate}</td>-->
+					</tr>
+				</template>
+			</tbody>
+			<template if:true={spinner}>
+				<div class="slds-align--absolute-center">
+					<lightning-spinner variant="brand" size="small"></lightning-spinner>
+				</div>
+			</template>
+		</table>
+		<div class="slds-grid slds-grid_vertical-align-center slds-grid_align-spread" style="padding-top: 0.5em;">
+
+			<!--TOTAL RECORDS-->
+			<div class="slds-clearfix">
+				<div class="slds-float_right">
+					<span class="slds-badge"> Total Records: {totalRecords}</span>
+				</div>
+			</div>
+			<!--PAGE NAVIGATION-->
+			<div class="slds-align_absolute-center" style="height:5rem">
+				<lightning-button disabled={bDisableFirst} icon-name="utility:jump_to_left" label="First"
+					class="slds-p-horizontal_x-small" alternative-text="first page" onclick={firstPage}>
+				</lightning-button>
+				<lightning-button disabled={bDisableFirst} icon-name="utility:chevronleft" label="Previous"
+					alternative-text="Previous" onclick={previousPage}></lightning-button>
+				&nbsp;
+				<span class="slds-badge">Showing {pageNumber} &nbsp;of&nbsp; {totalPages} &nbsp;&nbsp;Page(s)</span>
+				&nbsp;
+				<lightning-button disabled={bDisableLast} icon-name="utility:chevronright" label="Next"
+					alternative-text="Next" onclick={nextPage} class="slds-p-horizontal_x-small" icon-position="right">
+				</lightning-button>
+				<lightning-button disabled={bDisableLast} icon-name="utility:jump_to_right" label="Last"
+					alternative-text="last page" onclick={lastPage} icon-position="right"></lightning-button>
+			</div>
+
+		</div>
+		<br />
+		<br />
+		
+		<template if:true={orderDetailsModal}>
+			<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+				aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+				<div class="slds-modal__container" style="max-width:100%">
+					<header class="slds-modal__header">
+						<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+							<lightning-icon icon-name="utility:close"
+								alternative-text="close"
+								variant="inverse"
+								size="small" ></lightning-icon>
+							<span class="slds-assistive-text">Close</span>
+							</button>
+							<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Customer Details</h2>
+					</header>
+					<div class="slds-modal__content slds-p-around_medium">
+						<div class="slds-grid slds-wrap">
+							<c-auto-popup-new-lead orderid={sendorderid}></c-auto-popup-new-lead>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+		</template>
+		<template if:true={infoModal}>
+			<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+				aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+				<div class="slds-modal__container" style="max-width:100%">
+					<header class="slds-modal__header">
+						<div align="left" style="display: flex;">
+							<div style="width: 95%;">
+								<span style="font-size: 16px; color:#014A99;">prompt Information for User</span>
+							</div>
+							<div class="slds-align_absolute-center">
+								<lightning-icon icon-name="utility:close" alternative-text="Utility close" title="close"
+									size="x-small" onclick={closeModal}></lightning-icon>
+							</div>
+						</div>
+					</header>
+					<div class="slds-modal__content slds-p-around_medium">
+						<div class="slds-grid slds-wrap">
+							<div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12"
+								style="padding-top: 22px; border-bottom: 1px solid;border-color: #DDDBDA;">
+								<c-order-questions></c-order-questions>
+							</div>
+						</div>
+					</div>
+					<footer class="slds-modal__footer">
+						<div align="Center">
+							<button onclick={closeModal}
+								style="background: rgb(1, 74, 153);color: rgb(255, 255, 255);border: none;height: 40px;border-radius: 6px;font-size: 14px;text-align: center;width: 112px;">
+								Close</button>
+						</div>
+					</footer>
+				</div>
+			</section>
+			<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+		</template>
+
+	</lightning-card>
+</template>

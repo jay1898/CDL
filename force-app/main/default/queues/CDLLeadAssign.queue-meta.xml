@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>CDLLeadAssign</name>
+    <queueMembers>
+        <users>
+            <user>sales@cdlfineshine.com</user>
+            <user>cdl.user00001@gmail.com</user>
+            <user>cdl.user00002@gmail.com</user>
+            <user>cdl.user00003@gmail.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

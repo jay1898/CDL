@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Direct_RTO_Orders__c</name>
+    <picklistValues>
+        <masterLabel>Customer Cancelled</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fake Remark By Courier Boy</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

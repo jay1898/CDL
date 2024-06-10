@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PENDING PICKUP</fullName>
+                <default>false</default>
+                <label>PENDING PICKUP</label>
+            </value>
+            <value>
+                <fullName>PICKUP DONE</fullName>
+                <default>false</default>
+                <label>PICKUP DONE</label>
+            </value>
+            <value>
+                <fullName>IN-TRANSIT</fullName>
+                <default>false</default>
+                <label>IN-TRANSIT</label>
+            </value>
+            <value>
+                <fullName>OUT FOR DELIVERY</fullName>
+                <default>false</default>
+                <label>OUT FOR DELIVERY</label>
+            </value>
+            <value>
+                <fullName>DELIVERED</fullName>
+                <default>false</default>
+                <label>DELIVERED</label>
+            </value>
+            <value>
+                <fullName>picked up</fullName>
+                <default>false</default>
+                <label>picked up</label>
+            </value>
+            <value>
+                <fullName>in transit</fullName>
+                <default>false</default>
+                <label>in transit</label>
+            </value>
+            <value>
+                <fullName>delayed</fullName>
+                <default>false</default>
+                <label>delayed</label>
+            </value>
+            <value>
+                <fullName>UNDELIVERED</fullName>
+                <default>false</default>
+                <label>UNDELIVERED</label>
+            </value>
+            <value>
+                <fullName>picked up1</fullName>
+                <default>false</default>
+                <label>picked up1</label>
+            </value>
+            <value>
+                <fullName>rto in transit</fullName>
+                <default>false</default>
+                <label>rto in transit</label>
+            </value>
+            <value>
+                <fullName>rto undelivered</fullName>
+                <default>false</default>
+                <label>rto undelivered</label>
+            </value>
+            <value>
+                <fullName>misrouted</fullName>
+                <default>false</default>
+                <label>misrouted</label>
+            </value>
+            <value>
+                <fullName>out of delivery area</fullName>
+                <default>false</default>
+                <label>out of delivery area</label>
+            </value>
+            <value>
+                <fullName>rto out for delivery</fullName>
+                <default>false</default>
+                <label>rto out for delivery</label>
+            </value>
+            <value>
+                <fullName>rto processing</fullName>
+                <default>false</default>
+                <label>rto processing</label>
+            </value>
+            <value>
+                <fullName>shortage</fullName>
+                <default>false</default>
+                <label>shortage</label>
+            </value>
+            <value>
+                <fullName>reached at origin</fullName>
+                <default>false</default>
+                <label>reached at origin</label>
+            </value>
+            <value>
+                <fullName>rto delivered</fullName>
+                <default>false</default>
+                <label>rto delivered</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

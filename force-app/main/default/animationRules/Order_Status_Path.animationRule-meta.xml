@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnimationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <animationFrequency>rarely</animationFrequency>
+    <developerName>Order_Status_Path</developerName>
+    <isActive>true</isActive>
+    <masterLabel>Order Status Path</masterLabel>
+    <recordTypeContext>Custom</recordTypeContext>
+    <recordTypeName>Confirm_Order</recordTypeName>
+    <sobjectType>Order__c</sobjectType>
+    <targetField>Status__c</targetField>
+    <targetFieldChangeToValues>Abandoned,Confirm,voided</targetFieldChangeToValues>
+</AnimationRule>

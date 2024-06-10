@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendor_Store__c</fullName>
+    <externalId>false</externalId>
+    <label>Vendor Store</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FIERY FLAIR</fullName>
+                <default>false</default>
+                <label>FIERY FLAIR</label>
+            </value>
+            <value>
+                <fullName>CDL FINESHINE</fullName>
+                <default>false</default>
+                <label>CDL FINESHINE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

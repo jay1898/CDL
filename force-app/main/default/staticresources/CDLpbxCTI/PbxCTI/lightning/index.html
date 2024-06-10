@@ -1,0 +1,139 @@
+    <html class="no-js">
+
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      
+      
+      <meta charset="utf-8"></meta>
+      <!-- <meta name="format-detection" content="telephone=no" /> -->
+      <script type="application/javascript">
+      function SignIn(){
+          console.log(FindLeftWindowBoundry(), FindTopWindowBoundry());
+    var x = screen.width/2 - 700/2 + FindLeftWindowBoundry();
+    var y = screen.height/2 - 450/2 + FindTopWindowBoundry();
+    window.open("signup.html", 'sharegplus','height=485,width=700,left='+x+',top='+y);
+      }
+      function FindLeftWindowBoundry()
+       {
+            // In Internet Explorer window.screenLeft is the window's left boundry
+            if (window.screenLeft)
+            {
+                return window.screenLeft;
+            }
+            
+            // In Firefox window.screenX is the window's left boundry
+            if (window.screenX)
+                return window.screenX;
+                
+            return 0;
+       }
+       function FindTopWindowBoundry()
+       {
+            // In Internet Explorer window.screenLeft is the window's left boundry
+            if (window.screenTop)
+            {
+                return window.screenTop;
+            }
+            
+            // In Firefox window.screenY is the window's left boundry
+            if (window.screenY)
+                return window.screenY;
+                
+            return 0;
+       }
+
+      $(document).ready(function(){
+          var error_flag = localStorage.getItem("error_flag");
+          if(error_flag == 1){
+              $("#error-text").text("");
+              $("#error-text").text("Please Enter Mobile Number In Salesforce Profile to Login.");
+              $("#error-alert").show();
+              localStorage.setItem('tfn-auth', "");
+              localStorage.setItem('tfn-auth-profile', "");
+              localStorage.setItem('agents',"");
+              setTimeout(function() {
+                  if($("#error-alert").is(':hidden') == false){
+                      $("#error-alert").hide();
+                  }
+              }, 9000);
+          } else if(error_flag == 2){
+              $("#error-text").text("");
+              $("#error-text").text("Please Verify the Mobile Number you have entered in Salesforce Profile is Existing as a Agent In TATA Account.");
+              $("#error-alert").show();
+              localStorage.setItem('tfn-auth', "");
+              localStorage.setItem('tfn-auth-profile', "");
+              localStorage.setItem('agents',"");
+              setTimeout(function() {
+                  if($("#error-alert").is(':hidden') == false){
+                      $("#error-alert").hide();
+                  }
+              }, 10000);
+
+          } else{
+              $("#error-alert").hide();
+          }
+          localStorage.setItem("error_flag",0);
+      });
+      
+        
+      </script>
+    </head>
+    <style>
+    
+    .button {
+    width: 75%;
+    cursor: pointer;
+    height: 25px;
+    background: #4bae62;
+    margin: 170px 10%;
+    border-radius: 2px;
+    border: 0;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    }
+    .button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+
+}
+    .alert {
+        padding: 20px;
+        background-color: #f44336;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .closebtn:hover {
+        color: black;
+    }
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    </style>
+    <body>
+    <div id="main_content">
+        <div class="alert" id="error-alert" style="display: none;">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <span id ="error-text"></span>
+        </div>
+        <img src="public/logo1.png" class="center">
+    <button class="button center" onclick="SignIn();">Sign In</button>
+    </div>
+    </body>
+    </html>
