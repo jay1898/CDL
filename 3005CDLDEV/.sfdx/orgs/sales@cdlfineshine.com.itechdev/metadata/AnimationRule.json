@@ -1,0 +1,17 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-10-18T07:50:55.000Z",
+      "fileName": "animationRules/Order_Status_Path.animationRule",
+      "fullName": "Order_Status_Path",
+      "id": "4Zu7E00000005k6SAA",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-10-18T07:50:55.000Z",
+      "type": "AnimationRule"
+    }
+  ]
+}

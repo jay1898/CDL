@@ -1,0 +1,31 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-09-22T11:46:06.000Z",
+      "fileName": "contentassets/platformLogo.asset",
+      "fullName": "platformLogo",
+      "id": "03S8e000000kXdQEAU",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-09-22T11:46:06.000Z",
+      "manageableState": "unmanaged",
+      "type": "ContentAsset"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-10-31T09:38:34.000Z",
+      "fileName": "contentassets/CDLLogo.asset",
+      "fullName": "CDLLogo",
+      "id": "03S8e000000Lj5dEAC",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-10-31T09:38:34.000Z",
+      "manageableState": "unmanaged",
+      "type": "ContentAsset"
+    }
+  ]
+}

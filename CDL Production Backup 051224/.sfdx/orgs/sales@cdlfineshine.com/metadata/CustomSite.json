@@ -1,0 +1,17 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-15T10:18:28.000Z",
+      "fileName": "sites/APIWebjooks.site",
+      "fullName": "APIWebjooks",
+      "id": "0DM8e000000fz2FGAQ",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-15T10:24:47.000Z",
+      "type": "CustomSite"
+    }
+  ]
+}

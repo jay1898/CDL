@@ -1,0 +1,83 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:33.000Z",
+      "fileName": "remoteSiteSettings/Instashipin.remoteSite",
+      "fullName": "Instashipin",
+      "id": "0rp8e000000seCnAAI",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:33.000Z",
+      "manageableState": "unmanaged",
+      "type": "RemoteSiteSetting"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:33.000Z",
+      "fileName": "remoteSiteSettings/ShopifyImage.remoteSite",
+      "fullName": "ShopifyImage",
+      "id": "0rp8e000000seCpAAI",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:33.000Z",
+      "manageableState": "unmanaged",
+      "type": "RemoteSiteSetting"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:33.000Z",
+      "fileName": "remoteSiteSettings/Shopify.remoteSite",
+      "fullName": "Shopify",
+      "id": "0rp8e000000seCoAAI",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:33.000Z",
+      "manageableState": "unmanaged",
+      "type": "RemoteSiteSetting"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:33.000Z",
+      "fileName": "remoteSiteSettings/IndiaMartURL.remoteSite",
+      "fullName": "IndiaMartURL",
+      "id": "0rp8e000000seCmAAI",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:33.000Z",
+      "manageableState": "unmanaged",
+      "type": "RemoteSiteSetting"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:33.000Z",
+      "fileName": "remoteSiteSettings/ShopifyTestAcc.remoteSite",
+      "fullName": "ShopifyTestAcc",
+      "id": "0rp8e000000seCqAAI",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:33.000Z",
+      "manageableState": "unmanaged",
+      "type": "RemoteSiteSetting"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:33.000Z",
+      "fileName": "remoteSiteSettings/TrelloAPI.remoteSite",
+      "fullName": "TrelloAPI",
+      "id": "0rp8e000000seCrAAI",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:33.000Z",
+      "manageableState": "unmanaged",
+      "type": "RemoteSiteSetting"
+    }
+  ]
+}

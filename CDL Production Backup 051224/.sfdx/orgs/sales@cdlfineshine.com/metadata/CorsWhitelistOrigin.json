@@ -1,0 +1,18 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-10-28T05:52:42.000Z",
+      "fileName": "corsWhitelistOrigins/https_cdlfineshine_tatacti_vf_force_com.corsWhitelistOrigin",
+      "fullName": "https_cdlfineshine_tatacti_vf_force_com",
+      "id": "0748e0000008P4VAAU",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-10-28T05:52:42.000Z",
+      "manageableState": "unmanaged",
+      "type": "CorsWhitelistOrigin"
+    }
+  ]
+}

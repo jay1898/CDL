@@ -1,0 +1,18 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-09-22T11:46:06.000Z",
+      "fileName": "documents/SharedDocuments",
+      "fullName": "SharedDocuments",
+      "id": "00l8e000000WZahAAG",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-09-22T11:46:06.000Z",
+      "manageableState": "unmanaged",
+      "type": "DocumentFolder"
+    }
+  ]
+}

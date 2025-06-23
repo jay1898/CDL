@@ -1,0 +1,31 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000002EJ99AAG",
+      "createdByName": "Automated Process",
+      "createdDate": "2023-09-22T11:46:06.000Z",
+      "fileName": "duplicateRules/Contact.Standard_Rule_for_Contacts_with_Duplicate_Leads.duplicateRule",
+      "fullName": "Contact.Standard_Rule_for_Contacts_with_Duplicate_Leads",
+      "id": "0Bm8e000002TVv2CAG",
+      "lastModifiedById": "0058e000002EJ99AAG",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2023-09-22T11:46:06.000Z",
+      "manageableState": "unmanaged",
+      "type": "DuplicateRule"
+    },
+    {
+      "createdById": "0058e000002EJ99AAG",
+      "createdByName": "Automated Process",
+      "createdDate": "2023-09-22T11:46:06.000Z",
+      "fileName": "duplicateRules/Lead.Standard_Rule_for_Leads_with_Duplicate_Contacts.duplicateRule",
+      "fullName": "Lead.Standard_Rule_for_Leads_with_Duplicate_Contacts",
+      "id": "0Bm8e000002TVv1CAG",
+      "lastModifiedById": "0058e000002EJ99AAG",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2023-09-22T11:46:06.000Z",
+      "manageableState": "unmanaged",
+      "type": "DuplicateRule"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-09-27T09:47:52.000Z",
+      "fileName": "triggers/CDL_LeadTrigger.trigger",
+      "fullName": "CDL_LeadTrigger",
+      "id": "01q7E000001kk5bQAA",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-10-04T12:23:44.000Z",
+      "manageableState": "unmanaged",
+      "type": "ApexTrigger"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-10-12T13:21:34.000Z",
+      "fileName": "triggers/CDL_OrderTrigger.trigger",
+      "fullName": "CDL_OrderTrigger",
+      "id": "01q7E000001kqayQAA",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2025-01-16T06:59:17.000Z",
+      "manageableState": "unmanaged",
+      "type": "ApexTrigger"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2024-02-21T05:05:48.000Z",
+      "fileName": "triggers/CDL_OrderFollowupTrigger.trigger",
+      "fullName": "CDL_OrderFollowupTrigger",
+      "id": "01qQz000000CJi1IAG",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2024-03-07T06:27:59.000Z",
+      "manageableState": "unmanaged",
+      "type": "ApexTrigger"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-10-02T11:57:11.000Z",
+      "fileName": "triggers/CDL_AccountTrigger.trigger",
+      "fullName": "CDL_AccountTrigger",
+      "id": "01q7E000001kmLlQAI",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2024-05-14T11:59:58.000Z",
+      "manageableState": "unmanaged",
+      "type": "ApexTrigger"
+    }
+  ]
+}

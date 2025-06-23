@@ -1,0 +1,45 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-09-28T17:05:58.000Z",
+      "fileName": "staticresources/SiteSamples.resource",
+      "fullName": "SiteSamples",
+      "id": "0817E000000pQzWQAU",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-09-28T17:05:58.000Z",
+      "manageableState": "unmanaged",
+      "type": "StaticResource"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-11-01T05:28:51.000Z",
+      "fileName": "staticresources/CDLpbxCTI.resource",
+      "fullName": "CDLpbxCTI",
+      "id": "0817E000000pjJPQAY",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-11-01T05:28:51.000Z",
+      "manageableState": "unmanaged",
+      "type": "StaticResource"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-11-01T05:14:53.000Z",
+      "fileName": "staticresources/TataCTI__PbxCTI.resource",
+      "fullName": "TataCTI__PbxCTI",
+      "id": "0817E000000pjJKQAY",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-11-01T05:14:53.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "TataCTI",
+      "type": "StaticResource"
+    }
+  ]
+}

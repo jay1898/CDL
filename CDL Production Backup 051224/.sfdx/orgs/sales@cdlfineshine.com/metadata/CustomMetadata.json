@@ -1,0 +1,31 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "customMetadata/ShippingParterDetail.Shipdelight.md",
+      "fullName": "ShippingParterDetail.Shipdelight",
+      "id": "m00P100000BXLsAIAX",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomMetadata"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "customMetadata/ShippingParterDetail.ithinklogistics.md",
+      "fullName": "ShippingParterDetail.ithinklogistics",
+      "id": "m00P100000BXLsBIAX",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomMetadata"
+    }
+  ]
+}

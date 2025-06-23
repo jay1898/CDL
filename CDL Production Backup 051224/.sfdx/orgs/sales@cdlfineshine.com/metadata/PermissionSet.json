@@ -1,0 +1,31 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:32.000Z",
+      "fileName": "permissionsets/CDLManagement.permissionset",
+      "fullName": "CDLManagement",
+      "id": "0PS8e000000wOFAGA2",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2024-05-24T06:28:51.000Z",
+      "manageableState": "unmanaged",
+      "type": "PermissionSet"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2024-01-31T07:02:30.000Z",
+      "fileName": "permissionsets/CDLAdmin.permissionset",
+      "fullName": "CDLAdmin",
+      "id": "0PS8e000000wULYGA2",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2024-05-24T06:27:51.000Z",
+      "manageableState": "unmanaged",
+      "type": "PermissionSet"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:27.000Z",
+      "fileName": "tabs/Lead__c.tab",
+      "fullName": "Lead__c",
+      "id": "01r8e000000TeMeAAK",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:27.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomTab"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:27.000Z",
+      "fileName": "tabs/Delivery_Track__c.tab",
+      "fullName": "Delivery_Track__c",
+      "id": "01r8e000000TeMdAAK",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:27.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomTab"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:27.000Z",
+      "fileName": "tabs/Order_Item__c.tab",
+      "fullName": "Order_Item__c",
+      "id": "01r8e000000TeMfAAK",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:27.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomTab"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2024-01-12T05:54:09.000Z",
+      "fileName": "tabs/Shopify_Data__c.tab",
+      "fullName": "Shopify_Data__c",
+      "id": "01r8e000000TeaQAAS",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2024-01-12T05:54:09.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomTab"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:27.000Z",
+      "fileName": "tabs/Order__c.tab",
+      "fullName": "Order__c",
+      "id": "01r8e000000TeMgAAK",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:27.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomTab"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2024-01-12T05:53:26.000Z",
+      "fileName": "tabs/Order_Follow_Up__c.tab",
+      "fullName": "Order_Follow_Up__c",
+      "id": "01r8e000000TeaLAAS",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2024-01-12T05:53:26.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomTab"
+    }
+  ]
+}

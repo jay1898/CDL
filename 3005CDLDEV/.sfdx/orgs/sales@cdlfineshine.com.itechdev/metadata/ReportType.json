@@ -1,0 +1,96 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000002EJ99AAG",
+      "createdByName": "Automated Process",
+      "createdDate": "2024-02-10T00:18:55.000Z",
+      "fileName": "reportTypes/flow_orchestration_step_run_ootb_crt_two_four_eight.reportType",
+      "fullName": "flow_orchestration_step_run_ootb_crt_two_four_eight",
+      "id": "0707E000001FvfFQAS",
+      "lastModifiedById": "0058e000002EJ99AAG",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2024-02-10T00:18:55.000Z",
+      "manageableState": "unmanaged",
+      "type": "ReportType"
+    },
+    {
+      "createdById": "0058e000002EJ99AAG",
+      "createdByName": "Automated Process",
+      "createdDate": "2024-02-10T00:18:55.000Z",
+      "fileName": "reportTypes/flow_orchestration_work_item_ootb_crt_two_four_eight.reportType",
+      "fullName": "flow_orchestration_work_item_ootb_crt_two_four_eight",
+      "id": "0707E000001FvfGQAS",
+      "lastModifiedById": "0058e000002EJ99AAG",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2024-02-10T00:18:55.000Z",
+      "manageableState": "unmanaged",
+      "type": "ReportType"
+    },
+    {
+      "createdById": "0058e000002EJ99AAG",
+      "createdByName": "Automated Process",
+      "createdDate": "2023-09-22T11:46:06.000Z",
+      "fileName": "reportTypes/screen_flows_prebuilt_crt.reportType",
+      "fullName": "screen_flows_prebuilt_crt",
+      "id": "0708e0000000ugtAAA",
+      "lastModifiedById": "0058e000002EJ99AAG",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2023-09-22T11:46:06.000Z",
+      "manageableState": "unmanaged",
+      "type": "ReportType"
+    },
+    {
+      "createdById": "0058e000002EJ99AAG",
+      "createdByName": "Automated Process",
+      "createdDate": "2024-02-10T00:18:55.000Z",
+      "fileName": "reportTypes/flow_orchestration_stage_run_ootb_crt_two_four_eight.reportType",
+      "fullName": "flow_orchestration_stage_run_ootb_crt_two_four_eight",
+      "id": "0707E000001FvfEQAS",
+      "lastModifiedById": "0058e000002EJ99AAG",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2024-02-10T00:18:55.000Z",
+      "manageableState": "unmanaged",
+      "type": "ReportType"
+    },
+    {
+      "createdById": "0058e000002EJ99AAG",
+      "createdByName": "Automated Process",
+      "createdDate": "2023-09-24T23:06:11.000Z",
+      "fileName": "reportTypes/Opportunities_with_Historical_Trending.reportType",
+      "fullName": "Opportunities_with_Historical_Trending",
+      "id": "0708e000000GppZAAS",
+      "lastModifiedById": "0058e000002EJ99AAG",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2023-09-24T23:06:11.000Z",
+      "manageableState": "unmanaged",
+      "type": "ReportType"
+    },
+    {
+      "createdById": "0058e000002EJ99AAG",
+      "createdByName": "Automated Process",
+      "createdDate": "2024-02-10T00:18:55.000Z",
+      "fileName": "reportTypes/flow_orchestration_log_ootb_crt_two_four_eight.reportType",
+      "fullName": "flow_orchestration_log_ootb_crt_two_four_eight",
+      "id": "0707E000001FvfHQAS",
+      "lastModifiedById": "0058e000002EJ99AAG",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2024-02-10T00:18:55.000Z",
+      "manageableState": "unmanaged",
+      "type": "ReportType"
+    },
+    {
+      "createdById": "0058e000002EJ99AAG",
+      "createdByName": "Automated Process",
+      "createdDate": "2024-02-10T00:18:55.000Z",
+      "fileName": "reportTypes/flow_orchestration_run_ootb_crt_two_four_eight.reportType",
+      "fullName": "flow_orchestration_run_ootb_crt_two_four_eight",
+      "id": "0707E000001FvfDQAS",
+      "lastModifiedById": "0058e000002EJ99AAG",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2024-02-10T00:18:55.000Z",
+      "manageableState": "unmanaged",
+      "type": "ReportType"
+    }
+  ]
+}

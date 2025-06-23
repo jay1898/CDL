@@ -1,0 +1,59 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-11-20T12:31:16.000Z",
+      "fileName": "reports/CDLReports",
+      "fullName": "CDLReports",
+      "id": "00l7E000000o94kQAA",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-11-20T12:31:16.000Z",
+      "manageableState": "unmanaged",
+      "type": "ReportFolder"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-11-24T12:25:02.000Z",
+      "fileName": "reports/CDLUser",
+      "fullName": "CDLUser",
+      "id": "00l7E000000oBS9QAM",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-11-24T12:25:02.000Z",
+      "manageableState": "unmanaged",
+      "type": "ReportFolder"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-11-01T05:14:58.000Z",
+      "fileName": "reports/TataCTI__Call_Report",
+      "fullName": "TataCTI__Call_Report",
+      "id": "00l7E000000nyDtQAI",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-11-01T05:14:58.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "TataCTI",
+      "type": "ReportFolder"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "unfiled$public",
+      "fullName": "unfiled$public",
+      "id": "",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "manageableState": "unmanaged",
+      "namespacePrefix": "",
+      "type": "ReportFolder"
+    }
+  ]
+}

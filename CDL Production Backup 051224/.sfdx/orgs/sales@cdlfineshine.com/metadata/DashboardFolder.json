@@ -1,0 +1,57 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:23.000Z",
+      "fileName": "dashboards/CDL_Admin",
+      "fullName": "CDL_Admin",
+      "id": "00l8e000001AWV2AAO",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:23.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:23.000Z",
+      "fileName": "dashboards/CDL_Admin_F",
+      "fullName": "CDL_Admin_F",
+      "id": "00l8e000001AWV0AAO",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:23.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-12-14T10:12:23.000Z",
+      "fileName": "dashboards/CDL_Users_F",
+      "fullName": "CDL_Users_F",
+      "id": "00l8e000001AWV1AAO",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:23.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-09-22T11:46:06.000Z",
+      "fileName": "dashboards/CompanyDashboards",
+      "fullName": "CompanyDashboards",
+      "id": "00l8e000000WZagAAG",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-12-14T10:12:23.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2024-01-29T11:51:09.000Z",
+      "fileName": "notificationtypes/CDLOrderNotification.notiftype",
+      "fullName": "CDLOrderNotification",
+      "id": "0ML7E0000000OkyWAE",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2024-01-29T12:14:51.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomNotificationType"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-11-25T05:14:47.000Z",
+      "fileName": "dashboards/CDL_Admin",
+      "fullName": "CDL_Admin",
+      "id": "00l7E000000oBf9QAE",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-11-25T05:14:47.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-11-25T05:17:13.000Z",
+      "fileName": "dashboards/CDL_Admin_F",
+      "fullName": "CDL_Admin_F",
+      "id": "00l7E000000oBfJQAU",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-11-25T05:17:13.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-09-22T11:46:06.000Z",
+      "fileName": "dashboards/CompanyDashboards",
+      "fullName": "CompanyDashboards",
+      "id": "00l8e000000WZagAAG",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-09-22T11:46:06.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-11-25T05:18:15.000Z",
+      "fileName": "dashboards/CDL_Users_F",
+      "fullName": "CDL_Users_F",
+      "id": "00l7E000000oBfOQAU",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-11-25T05:18:15.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-11-24T12:21:23.000Z",
+      "fileName": "dashboards/UserDashboard",
+      "fullName": "UserDashboard",
+      "id": "00l7E000000oBRsQAM",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2023-11-24T12:21:23.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2024-01-30T12:20:06.000Z",
+      "fileName": "permissionsets/CDLAdmin.permissionset",
+      "fullName": "CDLAdmin",
+      "id": "0PS7E000001bQQXWA2",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2024-05-24T05:12:36.000Z",
+      "manageableState": "unmanaged",
+      "type": "PermissionSet"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2023-09-27T10:07:00.000Z",
+      "fileName": "permissionsets/CDLManagement.permissionset",
+      "fullName": "CDLManagement",
+      "id": "0PS7E000001Psj3WAC",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2024-05-24T05:12:36.000Z",
+      "manageableState": "unmanaged",
+      "type": "PermissionSet"
+    },
+    {
+      "createdById": "0058e000001kaNSAAY",
+      "createdByName": "Mayur L",
+      "createdDate": "2024-05-15T09:11:46.000Z",
+      "fileName": "permissionsets/Run_flow.permissionset",
+      "fullName": "Run_flow",
+      "id": "0PSQz000000mRAnOAM",
+      "lastModifiedById": "0058e000001kaNSAAY",
+      "lastModifiedByName": "Mayur L",
+      "lastModifiedDate": "2024-05-15T09:12:11.000Z",
+      "manageableState": "unmanaged",
+      "type": "PermissionSet"
+    }
+  ]
+}
